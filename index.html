@@ -2,156 +2,108 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Gadgetszzz | Viral Gadgets That Actually Work</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta name="description" content="Gadgetszzz finds viral gadgets that actually work. Honest picks with direct Amazon links.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gadgetszzz</title>
 
 <style>
-:root{
-  --bg:#020617;
-  --card:#020617;
-  --border:#1e293b;
-  --text:#e5e7eb;
-  --muted:#94a3b8;
-  --accent:#22c55e;
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:Inter,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
 }
 
-/* HEADER */
-header{
-  padding:24px;
-  text-align:center;
-  border-bottom:1px solid var(--border);
+header {
+  text-align: center;
+  padding: 30px 15px;
 }
 
-.logo{
-  font-size:34px;
-  font-weight:900;
-  letter-spacing:2px;
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
 }
 
-.tagline{
-  font-size:14px;
-  color:var(--muted);
+header p {
+  opacity: 0.8;
 }
 
-/* CONTAINER */
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:24px 14px 80px;
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* PRODUCT CARD */
-.product{
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:18px;
-  margin-bottom:40px;
-  animation:fadeUp .6s ease;
+.product {
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
+.badge {
+  background: #ff4d4d;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
-/* BADGE */
-.badge{
-  display:inline-block;
-  background:linear-gradient(90deg,#22c55e,#4ade80);
-  color:#000;
-  font-size:12px;
-  font-weight:800;
-  padding:4px 12px;
-  border-radius:999px;
-  margin-bottom:10px;
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
 }
 
-/* IMAGE SLIDER */
-.slider{
-  display:flex;
-  gap:12px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
+.slider img {
+  width: 300px;
+  border-radius: 12px;
+  scroll-snap-align: center;
+  flex-shrink: 0;
 }
 
-.slider::-webkit-scrollbar{display:none}
-
-.slider img{
-  width:300px;
-  border-radius:18px;
-  scroll-snap-align:start;
-  flex-shrink:0;
+.slider::-webkit-scrollbar {
+  display: none;
 }
 
-/* TEXT */
-.product h2{
-  margin:12px 0 6px;
+.product h2 {
+  font-size: 1.2rem;
+  margin: 15px 0 5px;
 }
 
-.product p{
-  font-size:15px;
-  color:var(--muted);
+.product p {
+  font-size: 0.9rem;
+  opacity: 0.85;
 }
 
-/* BUTTON */
-.buy{
-  display:inline-block;
-  margin-top:14px;
-  padding:12px 28px;
-  background:var(--accent);
-  color:#000;
-  font-weight:800;
-  border-radius:999px;
-  text-decoration:none;
-  transition:.15s;
+.buy {
+  display: block;
+  text-align: center;
+  background: #ff9900;
+  color: black;
+  padding: 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 12px;
 }
 
-.buy:hover{
-  transform:scale(1.05);
-  box-shadow:0 10px 25px rgba(34,197,94,.35);
+.buy:hover {
+  background: #ffb733;
 }
-
-/* FOOTER */
-footer{
-  border-top:1px solid var(--border);
-  padding:22px;
-  text-align:center;
-  font-size:14px;
-  color:var(--muted);
-}
-
-footer a{
-  color:var(--accent);
-  text-decoration:none;
-  margin:0 8px;
-}
-
-/* BACK TO TOP */
-#topBtn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  width:48px;
-  height:48px;
-  border:none;
-  border-radius:50%;
-  background:var(--accent);
-  color:#000;
-  font-size:20px;
-  font-weight:bold;
-  cursor:pointer;
-  display:none;
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  opacity: 0.7;
 }
 </style>
 </head>
@@ -159,76 +111,101 @@ footer a{
 <body>
 
 <header>
-  <div class="logo">GADGETSZZZ</div>
-  <div class="tagline">Viral gadgets that actually work</div>
+  <h1>Gadgetszzz</h1>
+  <p>Trending gadgets you actually want</p>
 </header>
 
 <div class="container">
 
-  <!-- PRODUCT 1 -->
-  <div class="product">
-    <span class="badge">🔥 VIRAL</span>
-
-    <div class="slider">
-      <img src="frother1.png">
-      <img src="frother2.png">
-    </div>
-
-    <h2>Rechargeable Milk Frother</h2>
-    <p>Fast, powerful, and rechargeable. Works for coffee, matcha, and eggs.</p>
-
-    <a class="buy" href="https://amzn.to/3ONGLMt" target="_blank">
-      Buy on Amazon
-    </a>
+<!-- PRODUCT 1 -->
+<div class="product">
+  <span class="badge">🔥 VIRAL</span>
+  <div class="slider">
+    <img src="frother1.png">
+    <img src="frother2.png">
   </div>
-
-  <!-- PRODUCT 2 -->
-  <div class="product">
-    <span class="badge">⭐ TRENDING</span>
-
-    <div class="slider">
-      <img src="ring1.png">
-      <img src="ring2.png">
-    </div>
-
-    <h2>Portable Ring Light</h2>
-    <p>Perfect lighting for TikTok, selfies, and content creation.</p>
-
-    <a class="buy" href="https://amzn.to/4cJkAz4" target="_blank">
-      Buy on Amazon
-    </a>
-  </div>
-  <!-- PRODUCT 3 -->
-  <div class="product">
-    <span class="badge">⭐ NEW</span>
-
-    <div class="slider">
-      <img src="lamp1.png">
-      <img src="lamp2.png">
-    </div>
-
-    <h2>LED Desk Lamp</h2>
-    <p>USB powered desk lamp with adjustable brightness.</p>
-
-    <a class="buy" href="https://amzn.to/4cNbzoC" target="_blank">
-      Buy on Amazon
-    </a>
-  </div>
+  <h2>Rechargeable Milk Frother</h2>
+  <p>Powerful, rechargeable, perfect for coffee and matcha.</p>
+  <a class="buy" href="YOUR_FROTHER_LINK" target="_blank">Buy on Amazon</a>
 </div>
 
-<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<!-- PRODUCT 2 -->
+<div class="product">
+  <span class="badge">⭐ TRENDING</span>
+  <div class="slider">
+    <img src="ring1.png">
+    <img src="ring2.png">
+  </div>
+  <h2>Portable Ring Light</h2>
+  <p>Perfect lighting for TikTok, selfies, and videos.</p>
+  <a class="buy" href="YOUR_RING_LINK" target="_blank">Buy on Amazon</a>
+</div>
+
+<!-- PRODUCT 3 -->
+<div class="product">
+  <span class="badge">🔥 HOT</span>
+  <div class="slider">
+    <img src="lamp1.png">
+    <img src="lamp2.png">
+  </div>
+  <h2>LED Desk / Mood Lamp</h2>
+  <p>Cozy lighting for desk, bedroom, or content setup.</p>
+  <a class="buy" href="YOUR_LAMP_LINK" target="_blank">Buy on Amazon</a>
+</div>
+
+<!-- PRODUCT 4 -->
+<div class="product">
+  <span class="badge">⭐ VIRAL</span>
+  <div class="slider">
+    <img src="glow1.png">
+    <img src="glow2.png">
+  </div>
+  <h2>Glow Phone Case</h2>
+  <p>Glows in the dark — TikTok favorite.</p>
+  <a class="buy" href="YOUR_GLOW_LINK" target="_blank">Buy on Amazon</a>
+</div>
+
+<!-- PRODUCT 5 -->
+<div class="product">
+  <span class="badge">🔥 HOT</span>
+  <div class="slider">
+    <img src="clear1.png">
+    <img src="clear2.png">
+  </div>
+  <h2>Clear Shockproof Case</h2>
+  <p>Minimal look with strong protection.</p>
+  <a class="buy" href="YOUR_CLEAR_LINK" target="_blank">Buy on Amazon</a>
+</div>
+
+<!-- PRODUCT 6 -->
+<div class="product">
+  <span class="badge">⭐ STRONG</span>
+  <div class="slider">
+    <img src="strong1.png">
+    <img src="strong2.png">
+  </div>
+  <h2>Heavy Duty Phone Case</h2>
+  <p>Military-grade protection.</p>
+  <a class="buy" href="YOUR_STRONG_LINK" target="_blank">Buy on Amazon</a>
+</div>
+
+<!-- PRODUCT 7 -->
+<div class="product">
+  <span class="badge">🔥 BEST SELLER</span>
+  <div class="slider">
+    <img src="wallet1.png">
+    <img src="wallet2.png">
+  </div>
+  <h2>Wallet Phone Case</h2>
+  <p>Card holder + phone protection.</p>
+  <a class="buy" href="YOUR_WALLET_LINK" target="_blank">Buy on Amazon</a>
+</div>
+
+</div>
 
 <footer>
-  <a href="privacy.html">Privacy</a> ·
-  <a href="privacy.html#contact">Contact</a>
-  <br><br>
-  As an Amazon Associate, we earn from qualifying purchases.
+  © 2026 Gadgetszzz · Some links may be affiliate links
 </footer>
-
-<script>
-const btn=document.getElementById("topBtn");
-window.onscroll=()=>{btn.style.display=window.scrollY>400?"block":"none"};
-</script>
 
 </body>
 </html>
