@@ -2,162 +2,138 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Gadgetszzz</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gadgetszzz | Viral Gadgets That Actually Work</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #141e30, #243b55);
-    color: #fff;
-    text-align: center;
-  }
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+}
 
-  header {
-    padding: 20px;
-    font-size: 28px;
-    font-weight: bold;
-  }
+header {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #1e293b;
+}
 
-  .card {
-    background: #ffffff;
-    color: #000;
-    max-width: 900px;
-    margin: 30px auto;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-    position: relative;
-  }
+.logo {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
 
-  .badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: linear-gradient(135deg, #ff004c, #ff7a00);
-    color: white;
-    padding: 6px 12px;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 20px;
-  }
+.tagline {
+  font-size: 14px;
+  color: #94a3b8;
+}
 
-  .slider {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 15px;
-  }
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 15px;
+}
 
-  .slider img {
-    width: 300px;
-    border-radius: 12px;
-    scroll-snap-align: center;
-    flex-shrink: 0;
-  }
+.product {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
 
-  .slider::-webkit-scrollbar {
-    display: none;
-  }
+.product h2 {
+  margin-top: 15px;
+}
 
-  .desc {
-    margin: 18px 0;
-    font-size: 16px;
-  }
+.slider {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
 
-  .buy-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #ff9900, #ff6600);
-    color: #000;
-    padding: 14px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    animation: pulse 2s infinite;
-  }
+.slider img {
+  width: 300px;
+  border-radius: 14px;
+  scroll-snap-align: start;
+}
 
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255,153,0,0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(255,153,0,0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,153,0,0); }
-  }
+.buy {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 22px;
+  background: #22c55e;
+  color: black;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}
 
-  footer {
-    font-size: 12px;
-    padding: 20px;
-    opacity: 0.8;
-  }
+.buy:hover {
+  opacity: 0.9;
+}
 
-  @media (max-width: 600px) {
-    .slider img {
-      width: 260px;
-    }
-  }
+footer {
+  border-top: 1px solid #1e293b;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+footer a {
+  color: #22c55e;
+  text-decoration: none;
+  margin: 0 8px;
+}
 </style>
 </head>
 
 <body>
 
-<header style="display:flex;align-items:center;justify-content:center;gap:10px;">
-  <span style="font-size:32px;">⚡</span>
-  <span style="font-size:28px;font-weight:bold;">Gadgetszzz</span>
+<header>
+  <div class="logo">GADGETSZZZ</div>
+  <div class="tagline">Viral gadgets that actually work</div>
 </header>
 
-<!-- PRODUCT 1 -->
-<div class="card">
-  <div class="badge">TRENDING</div>
+<div class="container">
 
-  <h2>Rechargeable Milk Frother</h2>
-
-  <div class="slider">
-    <img src="frother1.png">
-    <img src="frother2.png">
+  <!-- PRODUCT 1 -->
+  <div class="product">
+    <div class="slider">
+      <img src="frother1.png">
+      <img src="frother2.png">
+    </div>
+    <h2>Rechargeable Milk Frother</h2>
+    <p>Powerful, quiet, and perfect for coffee, matcha, or eggs.</p>
+    <a class="buy" href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank">
+      Buy on Amazon
+    </a>
   </div>
 
-  <p class="desc">
-    Powerful rechargeable milk frother with 3 speeds.
-    Perfect for coffee, matcha, and eggs.
-  </p>
-
-  <a class="buy-btn"
-     href="https://amzn.to/3ONGLMt"
-     target="_blank"
-     rel="nofollow sponsored">
-     🛒 Buy on Amazon
-  </a>
-</div>
-
-<!-- PRODUCT 2 -->
-<div class="card">
-  <div class="badge">TRENDING</div>
-
-  <h2>Viral LED Ring Light</h2>
-
-  <div class="slider">
-    <img src="ring1.png">
-    <img src="ring2.png">
+  <!-- PRODUCT 2 -->
+  <div class="product">
+    <div class="slider">
+      <img src="ring1.png">
+      <img src="ring2.png">
+    </div>
+    <h2>Portable Ring Light</h2>
+    <p>Perfect lighting for TikTok, selfies, and content creation.</p>
+    <a class="buy" href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank">
+      Buy on Amazon
+    </a>
   </div>
 
-  <p class="desc">
-    Adjustable LED ring light with phone holder.
-    Ideal for TikTok, selfies, and video calls.
-  </p>
-
-  <a class="buy-btn"
-     href="https://amzn.to/42tICcB"
-     target="_blank"
-     rel="nofollow sponsored">
-     🛒 Buy on Amazon
-  </a>
 </div>
 
 <footer>
-  As an Amazon Associate I earn from qualifying purchases.
-  <br>
-  <a href="about.html" style="color:#ccc;">About</a> |
-  <a href="privacy.html#contact" style="color:#ccc;">Contact</a>
+  <a href="privacy.html">Privacy</a> ·
+  <a href="privacy.html#contact">Contact</a>
+  <br><br>
+  Amazon affiliate disclosure: As an Amazon Associate, we earn from qualifying purchases.
 </footer>
 
 </body>
