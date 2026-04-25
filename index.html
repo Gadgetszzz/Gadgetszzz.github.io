@@ -2,117 +2,111 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Gadgetszzz – Viral Gadgets</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gadgetszzz</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+body{
+  margin:0;
+  font-family:system-ui,sans-serif;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
 }
 
-body {
-  margin: 0;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: white;
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(0,0,0,.65);
+  backdrop-filter:blur(12px);
+  text-align:center;
+  padding:18px;
+}
+header h1{margin:0;font-size:2.3rem;}
+header p{margin:4px 0;font-size:14px;opacity:.8}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:60px 20px;
+}
+.hero h2{font-size:2.4rem;margin-bottom:10px;}
+.hero p{max-width:600px;margin:auto;opacity:.85}
+
+/* GRID */
+.container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+  padding:30px 20px 60px;
 }
 
-header {
-  text-align: center;
-  padding: 30px 15px;
+.product{
+  background:rgba(255,255,255,.12);
+  border-radius:22px;
+  padding:15px;
+  box-shadow:0 18px 45px rgba(0,0,0,.45);
+  transition:.35s;
+  position:relative;
+}
+.product:hover{transform:translateY(-6px)}
+
+.badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:#ff2d55;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.2rem;
+/* SLIDER */
+.slider{overflow:hidden;border-radius:16px}
+.slides{display:flex;transition:.35s}
+.slides img{width:300px;flex-shrink:0}
+.dots{text-align:center;margin-top:8px}
+.dot{
+  width:8px;height:8px;
+  display:inline-block;
+  background:rgba(255,255,255,.4);
+  border-radius:50%;
+  margin:0 3px;
+}
+.dot.active{background:#fff}
+
+.tag{
+  display:inline-block;
+  margin:10px 0 4px;
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:12px;
+  background:rgba(0,0,0,.5);
 }
 
-header p {
-  opacity: 0.8;
+.buy{
+  display:block;
+  margin-top:14px;
+  padding:14px;
+  background:linear-gradient(135deg,#ff9900,#ffcc33);
+  color:#000;
+  text-align:center;
+  border-radius:16px;
+  font-weight:bold;
+  text-decoration:none;
+  transition:.25s;
 }
+.buy:hover{transform:scale(1.06)}
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: auto;
+footer{
+  text-align:center;
+  padding:25px 15px;
+  font-size:13px;
+  opacity:.7;
 }
-
-.product {
-  background: rgba(255,255,255,0.1);
-  border-radius: 18px;
-  padding: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-.product:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.5);
-}
-
-.badge {
-  background: #ff4d4d;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-.slider {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 10px;
-}
-
-.slider img {
-  width: 300px;
-  border-radius: 12px;
-  scroll-snap-align: center;
-  flex-shrink: 0;
-}
-
-.slider::-webkit-scrollbar {
-  display: none;
-}
-
-.product h2 {
-  font-size: 1.2rem;
-  margin: 15px 0 5px;
-}
-
-.product p {
-  font-size: 0.9rem;
-  opacity: 0.85;
-.buy {
-  display: block;
-  text-align: center;
-  background: linear-gradient(135deg, #ff9900, #ffcc33);
-  color: black;
-  padding: 14px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 14px;
-  transition: transform 0.2s ease;
-}
-
-.buy:hover {
-  transform: scale(1.05);
-}
-
-.buy:hover {
-  background: #ffb733;
-}
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  opacity: 0.7;
-}
+footer a{color:#fff;text-decoration:none;margin:0 8px}
 </style>
 </head>
 
@@ -121,99 +115,127 @@ footer {
 <header>
   <h1>Gadgetszzz</h1>
   <p>Trending gadgets you actually want</p>
+  <p>Curated Amazon finds · Updated weekly</p>
 </header>
+
+<section class="hero">
+  <h2>🔥 Viral Gadgets People Love</h2>
+  <p>Scroll, swipe, and shop trending Amazon gadgets that actually work.</p>
+</section>
 
 <div class="container">
 
-<!-- PRODUCT 1 -->
+<!-- MILK FROTHER -->
 <div class="product">
-  <span class="badge">🔥 VIRAL</span>
-  <div class="slider">
-    <img src="frother1.png">
-    <img src="frother2.png">
-  </div>
-  <h2>Rechargeable Milk Frother</h2>
-  <p>Powerful, rechargeable, perfect for coffee and matcha.</p>
-  <a class="buy" href="https://amzn.to/3Ops42f" target="_blank">Buy on Amazon</a>
+<span class="badge">🔥 VIRAL</span>
+<div class="slider"><div class="slides">
+<img src="frother1.png"><img src="frother2.png">
+</div></div><div class="dots"></div>
+<span class="tag">#TikTokMadeMeBuyIt</span>
+<h3>Rechargeable Milk Frother</h3>
+<p>Fast, powerful, rechargeable. Perfect for coffee & matcha.</p>
+<a class="buy" href="https://www.amazon.eg/dp/PRODUCTID/?tag=gadgetszzz-site-21" target="_blank">Buy on Amazon</a>
 </div>
 
-<!-- PRODUCT 2 -->
+<!-- RING LIGHT -->
 <div class="product">
-  <span class="badge">⭐ TRENDING</span>
-  <div class="slider">
-    <img src="ring1.png">
-    <img src="ring2.png">
-  </div>
-  <h2>Portable Ring Light</h2>
-  <p>Perfect lighting for TikTok, selfies, and videos.</p>
-  <a class="buy" href="https://amzn.to/4sYvU0p" target="_blank">Buy on Amazon</a>
+<span class="badge">⭐ TRENDING</span>
+<div class="slider"><div class="slides">
+<img src="ring1.png"><img src="ring2.png">
+</div></div><div class="dots"></div>
+<span class="tag">#ContentCreator</span>
+<h3>Portable Ring Light</h3>
+<p>Perfect lighting for TikTok, selfies & streaming.</p>
+<a class="buy" href="https://www.amazon.eg/dp/PRODUCTID/?tag=gadgetszzz-site-21" target="_blank">Buy on Amazon</a>
 </div>
 
-<!-- PRODUCT 3 -->
+<!-- LAMP -->
 <div class="product">
-  <span class="badge">🔥 HOT</span>
-  <div class="slider">
-    <img src="lamp1.png">
-    <img src="lamp2.png">
-  </div>
-  <h2>LED Desk / Mood Lamp</h2>
-  <p>Cozy lighting for desk, bedroom, or content setup.</p>
-  <a class="buy" href="https://amzn.to/3R1yc1f" target="_blank">Buy on Amazon</a>
+<span class="badge">🔥 VIRAL</span>
+<div class="slider"><div class="slides">
+<img src="lamp1.png"><img src="lamp2.png">
+</div></div><div class="dots"></div>
+<span class="tag">#RoomGlowUp</span>
+<h3>Sunset Projection Lamp</h3>
+<p>Aesthetic lighting for rooms, reels & vibes.</p>
+<a class="buy" href="https://www.amazon.eg/dp/PRODUCTID/?tag=gadgetszzz-site-21" target="_blank">Buy on Amazon</a>
 </div>
 
-<!-- PRODUCT 4 -->
+<!-- CLEAR CASE -->
 <div class="product">
-  <span class="badge">⭐ VIRAL</span>
-  <div class="slider">
-    <img src="glow1.png">
-    <img src="glow2.png">
-  </div>
-  <h2>Glow Phone Case</h2>
-  <p>Glows in the dark — TikTok favorite.</p>
-  <a class="buy" href="https://amzn.to/48SCSg6" target="_blank">Buy on Amazon</a>
+<div class="slider"><div class="slides">
+<img src="clear1.png"><img src="clear2.png">
+</div></div><div class="dots"></div>
+<span class="tag">#MinimalStyle</span>
+<h3>Clear Shockproof Phone Case</h3>
+<p>Transparent, durable, and drop-resistant.</p>
+<a class="buy" href="https://www.amazon.eg/dp/PRODUCTID/?tag=gadgetszzz-site-21" target="_blank">Buy on Amazon</a>
 </div>
 
-<!-- PRODUCT 5 -->
+<!-- GLOW CASE -->
 <div class="product">
-  <span class="badge">🔥 HOT</span>
-  <div class="slider">
-    <img src="clear1.png">
-    <img src="clear2.png">
-  </div>
-  <h2>Clear Shockproof Case</h2>
-  <p>Minimal look with strong protection.</p>
-  <a class="buy" href="https://amzn.to/42tnV0i" target="_blank">Buy on Amazon</a>
+<div class="slider"><div class="slides">
+<img src="glow1.png"><img src="glow2.png">
+</div></div><div class="dots"></div>
+<span class="tag">#GlowInDark</span>
+<h3>Glow in the Dark Phone Case</h3>
+<p>Charges in light and glows at night.</p>
+<a class="buy" href="https://www.amazon.eg/dp/PRODUCTID/?tag=gadgetszzz-site-21" target="_blank">Buy on Amazon</a>
 </div>
 
-<!-- PRODUCT 6 -->
+<!-- STRONG CASE -->
 <div class="product">
-  <span class="badge">⭐ STRONG</span>
-  <div class="slider">
-    <img src="strong1.png">
-    <img src="strong2.png">
-  </div>
-  <h2>Heavy Duty Phone Case</h2>
-  <p>Military-grade protection.</p>
-  <a class="buy" href="https://amzn.to/4vRDVXA" target="_blank">Buy on Amazon</a>
+<div class="slider"><div class="slides">
+<img src="strong1.png"><img src="strong2.png">
+</div></div><div class="dots"></div>
+<span class="tag">#HeavyDuty</span>
+<h3>Rugged Armor Phone Case</h3>
+<p>Extreme protection for daily drops.</p>
+<a class="buy" href="https://www.amazon.eg/dp/PRODUCTID/?tag=gadgetszzz-site-21" target="_blank">Buy on Amazon</a>
 </div>
 
-<!-- PRODUCT 7 -->
+<!-- WALLET CASE -->
 <div class="product">
-  <span class="badge">🔥 BEST SELLER</span>
-  <div class="slider">
-    <img src="wallet1.png">
-    <img src="wallet2.png">
-  </div>
-  <h2>Wallet Phone Case</h2>
-  <p>Card holder + phone protection.</p>
-  <a class="buy" href="https://amzn.to/4vSa6WW" target="_blank">Buy on Amazon</a>
+<div class="slider"><div class="slides">
+<img src="wallet1.png"><img src="wallet2.png">
+</div></div><div class="dots"></div>
+<span class="tag">#AllInOne</span>
+<h3>Wallet Phone Case</h3>
+<p>Holds cards, cash & phone together.</p>
+<a class="buy" href="https://www.amazon.eg/dp/PRODUCTID/?tag=gadgetszzz-site-21" target="_blank">Buy on Amazon</a>
 </div>
 
 </div>
 
 <footer>
-  © 2026 Gadgetszzz · Some links may be affiliate links
+<a href="about.html">About</a> ·
+<a href="privacy.html">Privacy</a> ·
+<a href="mailto:contact@gadgetszzz.com">Contact</a>
+<p>© 2026 Gadgetszzz</p>
 </footer>
+
+<script>
+document.querySelectorAll('.slider').forEach(slider=>{
+ const slides=slider.querySelector('.slides');
+ const imgs=slides.children;
+ const dots=slider.parentElement.querySelector('.dots');
+ let i=0,sx=0;
+ for(let j=0;j<imgs.length;j++){
+  const d=document.createElement('span');
+  d.className='dot'+(j==0?' active':'');
+  dots.appendChild(d);
+ }
+ const ds=dots.querySelectorAll('.dot');
+ slider.addEventListener('touchstart',e=>sx=e.touches[0].clientX);
+ slider.addEventListener('touchend',e=>{
+  let dx=sx-e.changedTouches[0].clientX;
+  if(dx>50&&i<imgs.length-1)i++;
+  if(dx<-50&&i>0)i--;
+  slides.style.transform=`translateX(-${i*300}px)`;
+  ds.forEach((d,j)=>d.classList.toggle('active',j==i));
+ });
+});
+</script>
 
 </body>
 </html>
