@@ -26,4 +26,33 @@ const PRODUCTS = [
     tag: "Room",
     link: "https://www.amazon.eg/dp/B0F54HVSZV/?tag=gadgetszzz-site-21"
   }
+,
+{
+  id: "clear-case",
+  name: "Clear Shockproof Phone Case",
+  desc: "Transparent, durable, and drop-resistant phone case.",
+  imgs: ["clear1.png","clear2.png"],
+  link: "https://www.amazon.eg/dp/B0DY2LXRQY/?tag=gadgetszzz-site-21"
+},
+{
+  id: "glow-case",
+  name: "Glow in the Dark Phone Case",
+  desc: "Charges in light and glows at night.",
+  imgs: ["glow1.png","glow2.png"],
+  link: "https://www.amazon.eg/dp/B0DY2LXRQY/?tag=gadgetszzz-site-21"
+},
+{
+  id: "rugged-case",
+  name: "Rugged Armor Phone Case",
+  desc: "Heavy-duty protection against drops and shocks.",
+  imgs: ["strong1.png","strong2.png"],
+  link: "https://www.amazon.eg/dp/B0DKC94519/?tag=gadgetszzz-site-21"
+},
+{
+  id: "wallet-case",
+  name: "Wallet Phone Case",
+  desc: "All-in-one case holding cards, cash & phone.",
+  imgs: ["wallet1.png","wallet2.png"],
+  link: "https://www.amazon.eg/dp/B0CFYWJ8NS/?tag=gadgetszzz-site-21"
+}
 ];
