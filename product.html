@@ -2,76 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title id="seo-title">Product – gadgetdszzz</title>
-<meta name="description" id="seo-desc" content="">
-<meta name="robots" content="index, follow">
-
-<style>
-body{
-  margin:0;
-  font-family:system-ui;
-  background:#061a33;
-  color:#fff;
-  padding:20px;
-}
-img{
-  max-width:100%;
-  border-radius:18px;
-}
-.buy{
-  display:block;
-  margin:20px 0;
-  padding:16px;
-  background:#ffcc33;
-  color:#000;
-  text-align:center;
-  border-radius:16px;
-  font-weight:700;
-  text-decoration:none;
-}
-a{color:#ffcc33;text-decoration:none}
-</style>
+<title>Product – Gadgetszzz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<body style="font-family:system-ui;background:#0f2027;color:#fff;padding:20px">
 
-<body>
-
-<main>
-  <h1 id="name"></h1>
-  <img id="image">
-  <p id="desc"></p>
-
-  <a id="buy" class="buy" target="_blank">Buy on Amazon</a>
-
-  <h3>Suggested Products</h3>
-  <div id="suggested"></div>
-</main>
+<div id="product"></div>
+<h3>Suggested Products</h3>
+<div id="suggested"></div>
 
 <script src="products.js"></script>
 <script>
-var id = new URLSearchParams(window.location.search).get("id");
-var product = products.find(function(p){ return p.id === id });
+const id=new URLSearchParams(location.search).get("id");
+const p=products.find(x=>x.id===id);
 
-if(!product){
-  document.body.innerHTML = "<p>Product not found.</p>";
-}
+document.getElementById("product").innerHTML=`
+  <h1>${p.name}</h1>
+  <img src="${p.images[0]}" width="300">
+  <p>${p.desc}</p>
+  <a href="${p.link}" target="_blank">Buy on Amazon</a>
+`;
 
-/* CONTENT */
-document.getElementById("name").textContent = product.name;
-document.getElementById("desc").textContent = product.desc;
-document.getElementById("image").src = product.img;
-document.getElementById("buy").href = product.link;
-
-/* SEO */
-document.getElementById("seo-title").textContent = product.name + " – gadgetdszzz";
-document.getElementById("seo-desc").setAttribute("content", product.desc);
-
-/* SUGGESTED */
-products.filter(function(p){ return p.id !== id }).slice(0,3)
-.forEach(function(p){
-  document.getElementById("suggested").innerHTML +=
-    `<p><a href="product.html?id=${p.id}">${p.name}</a></p>`;
+products.filter(x=>x.id!==id).slice(0,3).forEach(s=>{
+  document.getElementById("suggested").innerHTML+=`
+    <div onclick="location.href='product.html?id=${s.id}'" style="cursor:pointer">
+      ${s.name}
+    </div>`;
 });
 </script>
 
