@@ -2,118 +2,129 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Gadgetszzz – Viral Gadgets That Actually Work</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>gadgetdszzz – Viral Gadgets & Phone Accessories</title>
+<meta name="description" content="Discover viral gadgets, phone cases, and trending Amazon finds. Curated products that actually work.">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="gadgetdszzz – Viral Gadgets">
+<meta property="og:description" content="Trending gadgets and accessories people actually buy.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gadgetdszzz.github.io/">
 
 <style>
 body{
   margin:0;
-  font-family:system-ui,sans-serif;
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background:#061a33;
   color:#fff;
-}
-
-/* HEADER */
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(0,0,0,.6);
-  backdrop-filter:blur(12px);
-  text-align:center;
-  padding:18px;
 }
 
 /* HERO */
 .hero{
-  position:relative;
-  overflow:hidden;
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
-  padding:90px 20px;
 }
-.hero h2,.hero p{position:relative;z-index:2}
-.bubbles{position:absolute;inset:0;z-index:0}
-.bubble{
-  position:absolute;
-  bottom:-120px;
-  background:rgba(255,255,255,.15);
-  border-radius:50%;
-  animation:float linear infinite;
+.cloud{
+  background:#fff;
+  color:#061a33;
+  padding:32px 48px;
+  border-radius:120px;
+  font-size:3rem;
+  font-weight:800;
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+  animation:float 6s ease-in-out infinite;
 }
 @keyframes float{
-  from{transform:translateY(0);opacity:1}
-  to{transform:translateY(-120vh);opacity:0}
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-16px)}
+  100%{transform:translateY(0)}
 }
+.hero p{opacity:.85;margin-top:18px}
 
-/* GRID */
+/* PRODUCTS */
 .container{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:22px;
-  padding:30px 20px 60px;
+  padding:40px 20px 70px;
 }
 .product{
-  background:rgba(255,255,255,.12);
+  background:rgba(255,255,255,.08);
+  padding:16px;
   border-radius:22px;
-  padding:15px;
-  box-shadow:0 18px 45px rgba(0,0,0,.45);
-  transition:.35s;
-  cursor:pointer;
 }
-.product:hover{transform:translateY(-6px)}
-.slider{overflow:hidden;border-radius:16px}
-.slides{display:flex;transition:.35s}
-.slides img{width:300px;flex-shrink:0}
+.product img{
+  width:100%;
+  border-radius:16px;
+}
+.product h2{margin:12px 0 6px;font-size:1.1rem}
+.product p{font-size:14px;opacity:.85}
+
 .buy{
   display:block;
-  margin-top:14px;
+  margin-top:12px;
   padding:14px;
-  background:linear-gradient(135deg,#ff9900,#ffcc33);
+  background:#ffcc33;
   color:#000;
   text-align:center;
   border-radius:16px;
-  font-weight:bold;
+  font-weight:700;
   text-decoration:none;
 }
-.buy:hover{transform:scale(1.05)}
+
+footer{
+  text-align:center;
+  padding:22px;
+  font-size:13px;
+  opacity:.75;
+}
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Gadgetszzz</h1>
-  <p>Trending gadgets you actually want</p>
-</header>
-
+<!-- HERO -->
 <section class="hero">
-  <div class="bubbles"></div>
-  <h2>🔥 Viral Gadgets People Love</h2>
-  <p>Tap a product to see details & similar picks</p>
+  <div>
+    <div class="cloud">gadgetdszzz</div>
+    <p>Viral gadgets people actually want</p>
+  </div>
 </section>
 
-<div class="container">
+<!-- PRODUCTS -->
+<main id="products" class="container"></main>
 
-<!-- PRODUCT -->
-<div class="container" id="products"></div>
+<footer>
+  <p>As an Amazon Associate, I earn from qualifying purchases.</p>
+  <p>© 2026 gadgetdszzz</p>
+</footer>
 
+<!-- LOAD PRODUCTS -->
+<script src="products.js"></script>
+
+<!-- RENDER PRODUCTS -->
 <script>
-/* bubbles */
-const bubbles=document.querySelector('.bubbles');
-for(let i=0;i<18;i++){
- const b=document.createElement('div');
- b.className='bubble';
- const s=Math.random()*80+20;
- b.style.width=b.style.height=s+'px';
- b.style.left=Math.random()*100+'%';
- b.style.animationDuration=10+Math.random()*20+'s';
- bubbles.appendChild(b);
-}
+var container = document.getElementById("products");
 
-/* product click */
-function openProduct(p){
- location.href='product.html?'+new URLSearchParams(p).toString();
-}
+products.forEach(function(p){
+  container.innerHTML += `
+    <article class="product">
+      <a href="product.html?id=${p.id}">
+        <img src="${p.img}" alt="${p.name}">
+      </a>
+      <h2>${p.name}</h2>
+      <p>${p.desc}</p>
+      <a class="buy" href="${p.link}" target="_blank" rel="nofollow noopener">Buy on Amazon</a>
+    </article>
+  `;
+});
 </script>
 
 </body>
