@@ -1,6 +1,6 @@
 const products = [
   {
-    id: "frother",
+    id: "milk-frother",
     name: "Rechargeable Milk Frother",
     desc: "Fast, powerful, rechargeable. Perfect for coffee & matcha.",
     images: ["frother1.png", "frother2.png"],
@@ -42,7 +42,7 @@ const products = [
     link: "https://www.amazon.eg/dp/B0DKC94519/?tag=gadgetszzz-site-21"
   },
   {
-    id: "wallet-case",
+    id: "portable-wallet",
     name: "Wallet Phone Case",
     desc: "Holds cards, cash & phone together.",
     images: ["wallet1.png", "wallet2.png"],
