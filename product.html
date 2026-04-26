@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Product – Gadgetszzz</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Product – Gadgetszzz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="font-family:system-ui;background:#0f2027;color:#fff;padding:20px">
+
+<body style="font-family:system-ui;background:#111;color:#fff;padding:20px">
 
 <div id="product"></div>
-<h3>Suggested Products</h3>
-<div id="suggested"></div>
 
 <script src="products.js"></script>
 <script>
-const id=new URLSearchParams(location.search).get("id");
-const p=products.find(x=>x.id===id);
+const id = new URLSearchParams(location.search).get("id");
+const p = products.find(x=>x.id===id);
 
-document.getElementById("product").innerHTML=`
+document.getElementById("product").innerHTML = `
   <h1>${p.name}</h1>
-  <img src="${p.images[0]}" width="300">
+  <div style="display:flex;overflow-x:auto">
+    ${p.images.map(img=>`<img src="${img}" style="width:300px;margin-right:10px">`).join("")}
+  </div>
   <p>${p.desc}</p>
-  <a href="${p.link}" target="_blank">Buy on Amazon</a>
+  <a href="${p.link}" target="_blank"
+     style="display:inline-block;background:#ff9900;color:#000;
+            padding:14px 24px;border-radius:12px;font-weight:700">
+    🛒 Buy on Amazon
+  </a>
 `;
-
-products.filter(x=>x.id!==id).slice(0,3).forEach(s=>{
-  document.getElementById("suggested").innerHTML+=`
-    <div onclick="location.href='product.html?id=${s.id}'" style="cursor:pointer">
-      ${s.name}
-    </div>`;
-});
 </script>
 
 </body>
