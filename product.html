@@ -2,85 +2,77 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title id="ptitle"></title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title id="seo-title">Product – gadgetdszzz</title>
+<meta name="description" id="seo-desc" content="">
+<meta name="robots" content="index, follow">
 
 <style>
 body{
- margin:0;
- font-family:system-ui;
- background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
- color:#fff;
+  margin:0;
+  font-family:system-ui;
+  background:#061a33;
+  color:#fff;
+  padding:20px;
 }
-.wrap{max-width:900px;margin:auto;padding:25px}
-.card{
- background:rgba(255,255,255,.12);
- border-radius:22px;
- padding:20px;
+img{
+  max-width:100%;
+  border-radius:18px;
 }
-.card img{width:100%;border-radius:18px}
 .buy{
- display:block;
- margin-top:18px;
- padding:16px;
- background:linear-gradient(135deg,#ff9900,#ffcc33);
- color:#000;
- text-align:center;
- border-radius:18px;
- font-weight:bold;
- text-decoration:none;
+  display:block;
+  margin:20px 0;
+  padding:16px;
+  background:#ffcc33;
+  color:#000;
+  text-align:center;
+  border-radius:16px;
+  font-weight:700;
+  text-decoration:none;
 }
-.grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
- gap:14px;
- margin-top:20px;
-}
-.item{
- background:rgba(255,255,255,.12);
- padding:10px;
- border-radius:16px;
- cursor:pointer;
-}
-.item img{width:100%;border-radius:12px}
+a{color:#ffcc33;text-decoration:none}
 </style>
 </head>
 
 <body>
 
-<div class="wrap">
+<main>
+  <h1 id="name"></h1>
+  <img id="image">
+  <p id="desc"></p>
 
-<div class="card">
-<img id="img">
-<h1 id="name"></h1>
-<p id="desc"></p>
-<a id="buy" class="buy" target="_blank">Buy on Amazon</a>
-</div>
+  <a id="buy" class="buy" target="_blank">Buy on Amazon</a>
 
-<h3>🔥 You may also like</h3>
-<div class="grid" id="suggested"></div>
+  <h3>Suggested Products</h3>
+  <div id="suggested"></div>
+</main>
 
-</div>
-
+<script src="products.js"></script>
 <script>
-const p=Object.fromEntries(new URLSearchParams(location.search));
-img.src=p.img;
-name.innerText=p.name;
-desc.innerText=p.desc;
-buy.href=p.link;
-ptitle.innerText=p.name+' – Gadgetszzz';
+var id = new URLSearchParams(window.location.search).get("id");
+var product = products.find(function(p){ return p.id === id });
 
-const products=[
- {name:'Portable Ring Light',img:'ring1.png'},
- {name:'Sunset Projection Lamp',img:'lamp1.png'},
- {name:'Glow Phone Case',img:'glow1.png'}
-];
+if(!product){
+  document.body.innerHTML = "<p>Product not found.</p>";
+}
 
-suggested.innerHTML=products.map(x=>`
-<div class="item" onclick="history.back()">
-<img src="${x.img}" loading="lazy">
-<p>${x.name}</p>
-</div>`).join('');
+/* CONTENT */
+document.getElementById("name").textContent = product.name;
+document.getElementById("desc").textContent = product.desc;
+document.getElementById("image").src = product.img;
+document.getElementById("buy").href = product.link;
+
+/* SEO */
+document.getElementById("seo-title").textContent = product.name + " – gadgetdszzz";
+document.getElementById("seo-desc").setAttribute("content", product.desc);
+
+/* SUGGESTED */
+products.filter(function(p){ return p.id !== id }).slice(0,3)
+.forEach(function(p){
+  document.getElementById("suggested").innerHTML +=
+    `<p><a href="product.html?id=${p.id}">${p.name}</a></p>`;
+});
 </script>
 
 </body>
