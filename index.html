@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="google-site-verification" content="VBDeynzSAlxpqKOt-M0SDvNMl0kTDdUtpQY1o3XnMD8">
-  <title>Gadgetszzz – Viral Gadgets & Accessories</title>
-  <meta name="description" content="Discover trending gadgets, phone accessories, and smart tools. Hand-picked viral products with direct Amazon links.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+<meta charset="UTF-8">
+
+<!-- Google verification -->
+<meta name="google-site-verification" content="VBDeynzSAlxpqKOt-M0SDvNMl0kTDdUtpQY1o3XnMD8">
+
+<title>Gadgetszzz – Viral Gadgets</title>
+<meta name="description" content="Trending viral gadgets and phone accessories. Curated Amazon finds with direct affiliate links.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+
 <style>
 body{
   margin:0;
@@ -14,13 +18,31 @@ body{
   background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
   color:#fff;
 }
-header{text-align:center;padding:40px 20px}
-.hero h1{
-  font-size:3rem;
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(0,0,0,.65);
+  backdrop-filter:blur(12px);
+  text-align:center;
+  padding:18px;
+}
+header h1{margin:0;font-size:2.3rem;}
+header p{margin:4px 0;font-size:14px;opacity:.8}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:60px 20px;
+}
+.hero h2{
+  font-size:2.6rem;
   background:#fff;
   color:#000;
   display:inline-block;
-  padding:14px 28px;
+  padding:14px 30px;
   border-radius:50px;
   animation:float 3s ease-in-out infinite;
 }
@@ -28,41 +50,168 @@ header{text-align:center;padding:40px 20px}
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(-10px)}
 }
+.hero p{max-width:600px;margin:20px auto;opacity:.85}
+
+/* GRID */
 .container{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-  padding:30px;
+  gap:22px;
+  padding:30px 20px 60px;
 }
+
+/* PRODUCT CARD */
 .product{
   background:rgba(255,255,255,.12);
+  border-radius:22px;
   padding:15px;
-  border-radius:20px;
-  cursor:pointer;
+  box-shadow:0 18px 45px rgba(0,0,0,.45);
+  transition:.35s;
+  position:relative;
 }
-.product img{width:100%;border-radius:14px}
+.product:hover{transform:translateY(-6px)}
+
+.badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:#ff2d55;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+/* SLIDER */
+.slider{overflow:hidden;border-radius:16px}
+.slides{display:flex;transition:.35s}
+.slides img{width:100%;flex-shrink:0}
+
+.dots{text-align:center;margin-top:8px}
+.dot{
+  width:8px;height:8px;
+  display:inline-block;
+  background:rgba(255,255,255,.4);
+  border-radius:50%;
+  margin:0 3px;
+}
+.dot.active{background:#fff}
+
+/* TAG */
+.tag{
+  display:inline-block;
+  margin:10px 0 4px;
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:12px;
+  background:rgba(0,0,0,.5);
+}
+
+/* BUY BUTTON */
+.buy{
+  display:block;
+  margin-top:14px;
+  padding:14px;
+  background:linear-gradient(135deg,#ff9900,#ffcc33);
+  color:#000;
+  text-align:center;
+  border-radius:16px;
+  font-weight:bold;
+  text-decoration:none;
+  transition:.25s;
+}
+.buy:hover{transform:scale(1.06)}
+
+footer{
+  text-align:center;
+  padding:25px 15px;
+  font-size:13px;
+  opacity:.7;
+}
+footer a{color:#fff;text-decoration:none;margin:0 8px}
 </style>
 </head>
 
 <body>
 
-<header class="hero">
+<header>
   <h1>Gadgetszzz</h1>
-  <p>Trending gadgets people actually buy</p>
+  <p>Trending gadgets you actually want</p>
+  <p>Curated Amazon finds · Updated weekly</p>
 </header>
 
-<div class="container" id="products"></div>
+<section class="hero">
+  <h2>🔥 Viral Gadgets People Love</h2>
+  <p>Scroll, swipe, and shop trending Amazon gadgets that actually work.</p>
+</section>
 
-<script src="products.js"></script>
+<div class="container">
+
+<!-- MILK FROTHER -->
+<div class="product">
+<span class="badge">🔥 VIRAL</span>
+<div class="slider">
+  <div class="slides">
+    <img src="frother1.png">
+    <img src="frother2.png">
+  </div>
+</div>
+<div class="dots"></div>
+<span class="tag">#TikTokMadeMeBuyIt</span>
+<h3>Rechargeable Milk Frother</h3>
+<p>Fast, powerful, rechargeable. Perfect for coffee & matcha.</p>
+<a class="buy" href="https://www.amazon.eg/dp/B08BLJ473G/?tag=gadgetszzz-site-21" target="_blank">Buy on Amazon</a>
+</div>
+
+<!-- RING LIGHT -->
+<div class="product">
+<span class="badge">⭐ TRENDING</span>
+<div class="slider">
+  <div class="slides">
+    <img src="ring1.png">
+    <img src="ring2.png">
+  </div>
+</div>
+<div class="dots"></div>
+<span class="tag">#ContentCreator</span>
+<h3>Portable Ring Light</h3>
+<p>Perfect lighting for TikTok, selfies & streaming.</p>
+<a class="buy" href="https://www.amazon.eg/dp/B0G5GSPLJD/?tag=gadgetszzz-site-21" target="_blank">Buy on Amazon</a>
+</div>
+
+<!-- ADD YOUR CASES / LAMPS EXACTLY LIKE BEFORE BELOW -->
+
+</div>
+
+<footer>
+<a href="about.html">About</a> ·
+<a href="privacy.html">Privacy</a> ·
+<a href="mailto:contact@gadgetszzz.com">Contact</a>
+<p>© 2026 Gadgetszzz</p>
+</footer>
+
 <script>
-const wrap=document.getElementById("products");
-products.forEach(p=>{
-  wrap.innerHTML+=`
-    <div class="product" onclick="location.href='product.html?id=${p.id}'">
-      <img src="${p.images[0]}" alt="${p.name}">
-      <h3>${p.name}</h3>
-      <p>${p.desc}</p>
-    </div>`;
+document.querySelectorAll('.slider').forEach(slider=>{
+ const slides=slider.querySelector('.slides');
+ const imgs=slides.children;
+ const dots=slider.parentElement.querySelector('.dots');
+ let i=0,sx=0;
+
+ for(let j=0;j<imgs.length;j++){
+  const d=document.createElement('span');
+  d.className='dot'+(j==0?' active':'');
+  dots.appendChild(d);
+ }
+ const ds=dots.querySelectorAll('.dot');
+
+ slider.addEventListener('touchstart',e=>sx=e.touches[0].clientX);
+ slider.addEventListener('touchend',e=>{
+  let dx=sx-e.changedTouches[0].clientX;
+  if(dx>50&&i<imgs.length-1)i++;
+  if(dx<-50&&i>0)i--;
+  slides.style.transform=`translateX(-${i*100}%)`;
+  ds.forEach((d,j)=>d.classList.toggle('active',j==i));
+ });
 });
 </script>
 
