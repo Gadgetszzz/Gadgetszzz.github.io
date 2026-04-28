@@ -6,13 +6,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 body{margin:0;padding:20px;background:#0f2027;color:#fff;font-family:system-ui}
+button{padding:14px 24px;border:none;border-radius:30px;background:#ff9900;font-weight:700}
+.suggest{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
 </style>
 </head>
 <body>
 
-<div id="product"></div>
+<div id="main"></div>
 <h3>Suggested</h3>
-<div id="suggested"></div>
+<div class="suggest" id="suggest"></div>
 
 <script src="products.js"></script>
 <script src="app.js"></script>
@@ -20,22 +22,20 @@ body{margin:0;padding:20px;background:#0f2027;color:#fff;font-family:system-ui}
 const id=new URLSearchParams(location.search).get("id");
 const p=products.find(x=>x.id===id);
 
-const wrap=document.getElementById("product");
-wrap.append(slider(p.images));
-wrap.innerHTML+=`
-  <h1>${p.name}</h1>
-  <p>${p.desc}</p>
-  <button onclick="window.open('${p.buy}','_blank')">🛒 Buy on Amazon</button>
-`;
+const m=document.getElementById("main");
+m.append(slider(p.images));
+m.innerHTML+=`<h1>${p.name}</h1><p>${p.desc}</p>
+<button onclick="window.open('${p.buy}','_blank','noopener')">🛒 Buy on Amazon</button>`;
 
-injectStructuredData(p);
+structured(p);
 
-const sug=document.getElementById("suggested");
+const s=document.getElementById("suggest");
 products.filter(x=>x.id!==id).forEach(x=>{
   const c=document.createElement("div");
   c.append(slider(x.images));
+  c.innerHTML+=`<p>${x.name}</p>`;
   c.onclick=()=>location.href=`product.html?id=${x.id}`;
-  sug.append(c);
+  s.append(c);
 });
 </script>
 </body>
