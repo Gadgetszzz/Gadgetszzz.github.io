@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
- <url><loc>https://gadgetszzz.github.io/</loc></url>
- <url><loc>https://gadgetszzz.github.io/product.html?id=milk-frother</loc></url>
- <url><loc>https://gadgetszzz.github.io/product.html?id=ring-light</loc></url>
- <url><loc>https://gadgetszzz.github.io/product.html?id=sunset-lamp</loc></url>
- <url><loc>https://gadgetszzz.github.io/product.html?id=clear-case</loc></url>
- <url><loc>https://gadgetszzz.github.io/product.html?id=glow-case</loc></url>
- <url><loc>https://gadgetszzz.github.io/product.html?id=rugged-case</loc></url>
- <url><loc>https://gadgetszzz.github.io/product.html?id=wallet-case</loc></url>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://gadgetszzz.github.io/</loc></url>
+  <url><loc>https://gadgetszzz.github.io/about.html</loc></url>
+  <url><loc>https://gadgetszzz.github.io/privacy.html</loc></url>
+  <url><loc>https://gadgetszzz.github.io/contact.html</loc></url>
+  <url><loc>https://gadgetszzz.github.io/product.html?id=lamp</loc></url>
+  <url><loc>https://gadgetszzz.github.io/product.html?id=ring</loc></url>
+  <url><loc>https://gadgetszzz.github.io/product.html?id=wallet</loc></url>
+  <url><loc>https://gadgetszzz.github.io/product.html?id=clear</loc></url>
+  <url><loc>https://gadgetszzz.github.io/product.html?id=strong</loc></url>
+  <url><loc>https://gadgetszzz.github.io/product.html?id=glow</loc></url>
 </urlset>
