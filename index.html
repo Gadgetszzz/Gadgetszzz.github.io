@@ -5,11 +5,11 @@
   <title>Gadgetszzz – Viral Gadgets & Accessories</title>
 
   <!-- SEO -->
-  <meta name="description" content="Trending viral gadgets and phone accessories. Hand-picked Amazon finds with fast shipping.">
-  <meta name="keywords" content="viral gadgets, phone accessories, amazon gadgets, gadgetszzz">
+  <meta name="description" content="Trending viral gadgets and phone accessories. Hand-picked Amazon finds with real reviews.">
+  <meta name="keywords" content="viral gadgets, amazon gadgets, phone accessories, gadgetszzz">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Verification -->
+  <!-- Google verification -->
   <meta name="google-site-verification" content="VBDeynzSAlxpqKOt-M0SDvNMl0kTDdUtpQY1o3XnMD8">
 
   <style>
@@ -53,7 +53,11 @@
     }
     .slider{overflow:hidden;border-radius:14px}
     .slides{display:flex;transition:.3s}
-    .slides img{width:100%;flex-shrink:0}
+    .slides img{
+      width:100%;
+      flex-shrink:0;
+      border-radius:14px;
+    }
     .buy{
       display:flex;
       align-items:center;
@@ -100,13 +104,16 @@
 
 <script src="products.js"></script>
 <script>
-const wrap=document.getElementById("products");
+const wrap = document.getElementById("products");
+
 products.forEach(p=>{
-  wrap.innerHTML+=`
+  wrap.innerHTML += `
     <div class="product" onclick="location.href='product.html?id=${p.id}'">
       <div class="slider">
         <div class="slides">
-          ${p.images.map(i=>`<img src="${i}" alt="${p.name}">`).join("")}
+          ${p.images.map(i=>`
+            <img src="${i}" alt="${p.name}" loading="lazy" width="300" height="300">
+          `).join("")}
         </div>
       </div>
       <h3>${p.name}</h3>
