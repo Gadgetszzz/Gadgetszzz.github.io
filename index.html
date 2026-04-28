@@ -3,124 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <title>Gadgetszzz – Viral Gadgets & Accessories</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Trending viral gadgets and phone accessories. Hand-picked Amazon finds with real reviews.">
-  <meta name="keywords" content="viral gadgets, amazon gadgets, phone accessories, gadgetszzz">
+  <meta name="description" content="Discover trending viral gadgets, phone accessories, and smart tools. Hand-picked Amazon finds.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google verification -->
   <meta name="google-site-verification" content="VBDeynzSAlxpqKOt-M0SDvNMl0kTDdUtpQY1o3XnMD8">
+  <link rel="canonical" href="https://gadgetszzz.github.io/">
 
-  <style>
-    body{
-      margin:0;
-      font-family:system-ui,sans-serif;
-      background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-      color:#fff;
-    }
-    header{
-      position:sticky;
-      top:0;
-      background:rgba(0,0,0,.6);
-      backdrop-filter:blur(10px);
-      padding:20px;
-      text-align:center;
-    }
-    .hero{
-      text-align:center;
-      padding:60px 20px;
-    }
-    .hero h1{
-      font-size:3rem;
-      background:#fff;
-      color:#000;
-      display:inline-block;
-      padding:14px 28px;
-      border-radius:50px;
-    }
-    .container{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:22px;
-      padding:30px;
-    }
-    .product{
-      background:rgba(255,255,255,.12);
-      border-radius:20px;
-      padding:15px;
-      cursor:pointer;
-    }
-    .slider{overflow:hidden;border-radius:14px}
-    .slides{display:flex;transition:.3s}
-    .slides img{
-      width:100%;
-      flex-shrink:0;
-      border-radius:14px;
-    }
-    .buy{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      margin-top:12px;
-      padding:14px;
-      background:linear-gradient(135deg,#ff9900,#ffcc33);
-      color:#000;
-      border-radius:16px;
-      font-weight:bold;
-      text-decoration:none;
-    }
-    footer{
-      text-align:center;
-      padding:25px;
-      font-size:14px;
-      opacity:.8;
-    }
-    footer a{color:#fff;text-decoration:none;margin:0 8px}
-  </style>
+<style>
+body{
+  margin:0;
+  font-family:system-ui,sans-serif;
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+}
+header{text-align:center;padding:50px 20px}
+.hero h1{
+  font-size:3rem;
+  background:#fff;
+  color:#000;
+  display:inline-block;
+  padding:14px 32px;
+  border-radius:50px;
+  animation:float 3s ease-in-out infinite;
+}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+.container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+  padding:30px;
+}
+
+.product{
+  background:rgba(255,255,255,.12);
+  border-radius:22px;
+  padding:15px;
+  cursor:pointer;
+  transition:.3s;
+}
+.product:hover{transform:translateY(-6px)}
+.product img{width:100%;border-radius:16px}
+.product h3{margin:10px 0 5px}
+.product p{opacity:.85;font-size:14px}
+
+footer{
+  text-align:center;
+  padding:25px;
+  font-size:13px;
+  opacity:.7;
+}
+footer a{color:#fff;text-decoration:none;margin:0 8px}
+</style>
 </head>
 
 <body>
 
-<header>
+<header class="hero">
   <h1>Gadgetszzz</h1>
-  <p>Trending gadgets you actually want</p>
+  <p>Trending gadgets people actually buy</p>
 </header>
-
-<section class="hero">
-  <h2>🔥 Viral Gadgets People Love</h2>
-  <p>Curated Amazon finds · Updated weekly</p>
-</section>
 
 <div class="container" id="products"></div>
 
 <footer>
   <a href="about.html">About</a> ·
   <a href="privacy.html">Privacy</a> ·
-  <a href="mailto:contact@gadgetszzz.com">Contact</a>
+  <a href="contact.html">Contact</a>
   <p>© 2026 Gadgetszzz</p>
 </footer>
 
 <script src="products.js"></script>
 <script>
-const wrap = document.getElementById("products");
-
+const wrap=document.getElementById("products");
 products.forEach(p=>{
-  wrap.innerHTML += `
+  wrap.innerHTML+=`
     <div class="product" onclick="location.href='product.html?id=${p.id}'">
-      <div class="slider">
-        <div class="slides">
-          ${p.images.map(i=>`
-            <img src="${i}" alt="${p.name}" loading="lazy" width="300" height="300">
-          `).join("")}
-        </div>
-      </div>
+      <img src="${p.images[0]}" loading="lazy" alt="${p.name}">
       <h3>${p.name}</h3>
       <p>${p.desc}</p>
-      <a class="buy" href="${p.link}" target="_blank" onclick="event.stopPropagation()">
-        🛒 Buy on Amazon
-      </a>
     </div>`;
 });
 </script>
