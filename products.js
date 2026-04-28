@@ -2,10 +2,11 @@ const products = [
   {
     id: "milk-frother",
     name: "Rechargeable Milk Frother",
-    desc: "Fast, powerful, rechargeable. Perfect for coffee & matcha.",
+    desc: "Fast, powerful, rechargeable milk frother for coffee & matcha.",
     images: ["frother1.png", "frother2.png"],
     link: "https://www.amazon.eg/dp/B08BLJ473G/?tag=gadgetszzz-site-21"
   },
+
   {
     id: "ring-light",
     name: "Portable Ring Light",
@@ -13,13 +14,15 @@ const products = [
     images: ["ring1.png", "ring2.png"],
     link: "https://www.amazon.eg/dp/B0G5GSPLJD/?tag=gadgetszzz-site-21"
   },
+
   {
-    id: "lamp",
+    id: "sunset-lamp",
     name: "Sunset Projection Lamp",
     desc: "Aesthetic lighting for rooms, reels & vibes.",
     images: ["lamp1.png", "lamp2.png"],
     link: "https://www.amazon.eg/dp/B0F54HVSZV/?tag=gadgetszzz-site-21"
   },
+
   {
     id: "clear-case",
     name: "Clear Shockproof Phone Case",
@@ -27,6 +30,7 @@ const products = [
     images: ["clear1.png", "clear2.png"],
     link: "https://www.amazon.eg/dp/B0DY2LXRQY/?tag=gadgetszzz-site-21"
   },
+
   {
     id: "glow-case",
     name: "Glow in the Dark Phone Case",
@@ -34,6 +38,7 @@ const products = [
     images: ["glow1.png", "glow2.png"],
     link: "https://www.amazon.eg/dp/B0DY2LXRQY/?tag=gadgetszzz-site-21"
   },
+
   {
     id: "rugged-case",
     name: "Rugged Armor Phone Case",
@@ -41,8 +46,9 @@ const products = [
     images: ["strong1.png", "strong2.png"],
     link: "https://www.amazon.eg/dp/B0DKC94519/?tag=gadgetszzz-site-21"
   },
+
   {
-    id: "portable-wallet",
+    id: "wallet-case",
     name: "Wallet Phone Case",
     desc: "Holds cards, cash & phone together.",
     images: ["wallet1.png", "wallet2.png"],
