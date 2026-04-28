@@ -8,23 +8,41 @@
 <body>
 
 <div id="product"></div>
-<h3 style="padding:20px">Suggested Products</h3>
+<h3>Suggested Products</h3>
 <div id="suggested"></div>
 
 <script src="products.js"></script>
 <script>
-const id=new URLSearchParams(location.search).get("id");
-const p=products.find(x=>x.id===id);
+const id = new URLSearchParams(location.search).get("id");
+const p = products.find(x=>x.id===id);
 
-document.getElementById("product").innerHTML=`
+/* PRODUCT */
+document.getElementById("product").innerHTML = `
   <h1>${p.name}</h1>
   <p>${p.desc}</p>
   <a href="${p.link}" target="_blank">🛒 Buy on Amazon</a>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "${p.name}",
+    "description": "${p.desc}",
+    "image": "${p.images[0]}",
+    "brand": {
+      "@type": "Brand",
+      "name": "Gadgetszzz"
+    }
+  }
+  </script>
 `;
 
+/* SUGGESTED */
 products.filter(x=>x.id!==id).slice(0,3).forEach(s=>{
-  document.getElementById("suggested").innerHTML+=`
-    <div onclick="location.href='product.html?id=${s.id}'">${s.name}</div>`;
+  document.getElementById("suggested").innerHTML += `
+    <div onclick="location.href='product.html?id=${s.id}'" style="cursor:pointer">
+      ${s.name}
+    </div>`;
 });
 </script>
 
