@@ -1,89 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Product – Gadgetszzz</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
-body{margin:0;font-family:system-ui;background:#0f2027;color:#fff;padding:20px}
-.slider{overflow:hidden;border-radius:18px}
-.slides{display:flex;transition:.3s}
-.slides img{width:100%;flex-shrink:0}
-button{
-  width:100%;
-  padding:14px;
-  margin:15px 0;
-  border:none;
-  border-radius:30px;
-  background:#ff9900;
-  font-size:16px;
-  cursor:pointer;
-}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
-.card{background:rgba(255,255,255,.1);padding:10px;border-radius:16px}
+body{margin:0;padding:20px;background:#0f2027;color:#fff;font-family:system-ui}
 </style>
 </head>
 <body>
 
 <div id="product"></div>
-
-<h2>Suggested Products</h2>
-<div class="grid" id="suggested"></div>
+<h3>Suggested</h3>
+<div id="suggested"></div>
 
 <script src="products.js"></script>
+<script src="app.js"></script>
 <script>
 const id=new URLSearchParams(location.search).get("id");
-const product=products.find(p=>p.id===id);
+const p=products.find(x=>x.id===id);
 
-document.getElementById("product").innerHTML=`
-  <div class="slider">
-    <div class="slides">
-      ${product.images.map(i=>`<img src="${i}">`).join("")}
-    </div>
-  </div>
-  <h1>${product.name}</h1>
-  <p>${product.desc}</p>
-  <button onclick="window.open('${product.buy}','_blank')">🛒 Buy on Amazon</button>
+const wrap=document.getElementById("product");
+wrap.append(slider(p.images));
+wrap.innerHTML+=`
+  <h1>${p.name}</h1>
+  <p>${p.desc}</p>
+  <button onclick="window.open('${p.buy}','_blank')">🛒 Buy on Amazon</button>
 `;
 
-products.filter(p=>p.id!==id).forEach(p=>{
-  suggested.innerHTML+=`
-    <div class="card" onclick="location.href='product.html?id=${p.id}'">
-      <div class="slider">
-        <div class="slides">
-          ${p.images.map(i=>`<img src="${i}">`).join("")}
-        </div>
-      </div>
-      <h4>${p.name}</h4>
-    </div>
-  `;
+injectStructuredData(p);
+
+const sug=document.getElementById("suggested");
+products.filter(x=>x.id!==id).forEach(x=>{
+  const c=document.createElement("div");
+  c.append(slider(x.images));
+  c.onclick=()=>location.href=`product.html?id=${x.id}`;
+  sug.append(c);
 });
-
-initSwipers();
 </script>
-
-<script>
-function initSwipers(){
-  document.querySelectorAll(".slider").forEach(slider=>{
-    const slides=slider.querySelector(".slides");
-    let i=0,x=0;
-    slider.onmousedown=e=>x=e.clientX;
-    slider.onmouseup=e=>{
-      let d=e.clientX-x;
-      if(d<-50 && i<slides.children.length-1)i++;
-      if(d>50 && i>0)i--;
-      slides.style.transform=`translateX(-${i*100}%)`;
-    };
-    slider.ontouchstart=e=>x=e.touches[0].clientX;
-    slider.ontouchend=e=>{
-      let d=e.changedTouches[0].clientX-x;
-      if(d<-50 && i<slides.children.length-1)i++;
-      if(d>50 && i>0)i--;
-      slides.style.transform=`translateX(-${i*100}%)`;
-    };
-  });
-}
-</script>
-
 </body>
 </html>
