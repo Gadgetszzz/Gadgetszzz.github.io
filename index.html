@@ -2,43 +2,48 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Gadgetszzz</title>
+<title>Gadgetszzz – Viral Gadgets</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Trending gadgets people actually buy">
-<link rel="preload" as="image" href="images/frother1.jpg">
+<meta name="description" content="Trending gadgets and accessories people actually buy.">
 <style>
 body{margin:0;background:#0f2027;color:#fff;font-family:system-ui}
+header{text-align:center;padding:30px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:20px}
-.card{background:rgba(255,255,255,.1);padding:15px;border-radius:20px}
+.card{background:rgba(255,255,255,.1);padding:15px;border-radius:20px;cursor:pointer}
 .slider{overflow:hidden;border-radius:15px}
-.slides{display:flex;transition:.4s}
-.slides img{width:100%}
+.track{display:flex;transition:.4s}
+.track img{width:100%}
 .dots{text-align:center}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#777;margin:5px}
-.dot.active{background:#fff}
-button{width:100%;padding:12px;border-radius:30px;border:none;background:#ff9900;font-weight:bold}
+.dot{width:8px;height:8px;background:#666;border-radius:50%;display:inline-block;margin:5px}
+.dot.on{background:#fff}
+button{width:100%;padding:12px;border:none;border-radius:30px;background:#ff9900;font-weight:700}
+nav a{color:#fff;margin:0 10px}
 </style>
 </head>
 <body>
+
+<header>
+<h1>Gadgetszzz</h1>
+<nav>
+<a href="about.html">About</a>
+<a href="privacy.html">Privacy</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
 
 <div class="grid" id="grid"></div>
 
 <script src="products.js"></script>
 <script src="app.js"></script>
 <script>
-const grid=document.getElementById("grid");
-
+const g=document.getElementById("grid");
 products.forEach(p=>{
   const c=document.createElement("div");
   c.className="card";
   c.append(slider(p.images));
-  c.innerHTML+=`
-    <h3>${p.name}</h3>
-    <p>${p.desc}</p>
-    <button>🛒 View</button>
-  `;
+  c.innerHTML+=`<h3>${p.name}</h3><p>${p.desc}</p><button>🛒 View</button>`;
   c.onclick=()=>location.href=`product.html?id=${p.id}`;
-  grid.append(c);
+  g.append(c);
 });
 </script>
 </body>
