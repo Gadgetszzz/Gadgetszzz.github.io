@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<pre id="out"></pre>
+
+<script src="products.js"></script>
+<script>
+let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+xml += `<url><loc>https://gadgetszzz.github.io/</loc></url>\n`;
+
+products.forEach(p=>{
+  xml += `<url><loc>https://gadgetszzz.github.io/product.html?id=${p.id}</loc></url>\n`;
+});
+
+xml += `</urlset>`;
+document.getElementById("out").textContent = xml;
+</script>
+</body>
+</html>
