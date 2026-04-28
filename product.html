@@ -2,11 +2,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Product</title>
+<title>Product – Gadgetszzz</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 body{margin:0;padding:20px;background:#0f2027;color:#fff;font-family:system-ui}
-button{padding:14px 24px;border:none;border-radius:30px;background:#ff9900;font-weight:700}
+.cart{padding:14px 24px;border:none;border-radius:30px;background:#ff9900;font-weight:700;animation:pulse 2s infinite}
+@keyframes pulse{50%{transform:scale(1.05)}}
 .suggest{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
 </style>
 </head>
@@ -25,7 +26,7 @@ const p=products.find(x=>x.id===id);
 const m=document.getElementById("main");
 m.append(slider(p.images));
 m.innerHTML+=`<h1>${p.name}</h1><p>${p.desc}</p>
-<button onclick="window.open('${p.buy}','_blank','noopener')">🛒 Buy on Amazon</button>`;
+<button class="cart" onclick="window.open('${p.buy}','_blank','noopener noreferrer')">🛒 Buy on Amazon</button>`;
 
 structured(p);
 
