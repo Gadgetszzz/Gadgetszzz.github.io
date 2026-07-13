@@ -3,61 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gadgetszzz - Premium tech gadgets and modern lifestyle accessories. Shop the latest innovations.">
-    <title>Gadgetszzz | Official Tech Store</title>
+    <meta name="description" content="Gadgetszzz - The ultimate global marketplace for premium lifestyle, home, tech, and fashion essentials. Shop our exclusive collection today.">
+    <meta name="keywords" content="Gadgetszzz, lifestyle store, premium essentials, home goods, tech gadgets, fashion, online shopping, global marketplace, official store">
+    <title>Gadgetszzz | Official Global Store</title>
     <style>
-        :root { --dark-blue: #050510; --accent-gold: #FFD814; --text-light: #e0e0e0; }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; background-color: var(--dark-blue); color: var(--text-light); line-height: 1.6; }
-        
-        /* Header */
-        header { padding: 20px 40px; border-bottom: 1px solid #1a1a3a; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: white; }
-        
-        /* Product Section */
-        .hero { padding: 80px 20px; text-align: center; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px; }
-        .product-card { background: #0a0a1f; padding: 20px; border-radius: 10px; border: 1px solid #1a1a3a; }
-        
-        /* Buttons */
-        .btn-gold { background: var(--accent-gold); color: black; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; }
-        .btn-gold:hover { background: #F7CA00; }
-        
-        /* Footer */
-        footer { padding: 40px; text-align: center; border-top: 1px solid #1a1a3a; }
-        details { max-width: 600px; margin: 10px auto; background: #0a0a1f; padding: 15px; border-radius: 5px; text-align: left; }
+        :root { --dark-blue: #050510; --bg-card: #0a0a1f; --accent-gold: #FFD814; --text-main: #e0e0e0; --border-color: #1a1a3a; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--dark-blue); color: var(--text-main); font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
+        header { background: #000; padding: 30px 5%; border-bottom: 2px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 2.5rem; font-weight: 800; letter-spacing: 5px; color: #fff; text-transform: uppercase; }
+        nav a { color: var(--text-main); margin-left: 30px; text-decoration: none; font-weight: 600; }
+        .hero { padding: 120px 5%; text-align: center; background: linear-gradient(180deg, #0a0a1f 0%, #050510 100%); }
+        .slogan { font-size: 4rem; margin-bottom: 20px; }
+        .catalog { padding: 60px 5%; max-width: 1500px; margin: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: var(--bg-card); padding: 40px; border-radius: 15px; border: 1px solid var(--border-color); text-align: center; transition: 0.3s; }
+        .card:hover { border-color: var(--accent-gold); transform: translateY(-10px); }
+        .buy-btn { display: inline-block; background: var(--accent-gold); color: #000; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 25px; }
+        footer { padding: 100px 5%; background: #000; text-align: center; border-top: 4px solid var(--accent-gold); }
+        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: left; margin-bottom: 50px; }
+        @media (max-width: 1200px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">Gadgetszzz</div>
-    <nav>Shop | Deals | Support</nav>
+    <div class="logo">GADGETSZZZ</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Collections</a>
+        <a href="#">Lifestyle</a>
+        <a href="#">Support</a>
+    </nav>
 </header>
 
 <section class="hero">
-    <h1>Elevate Your Tech Setup</h1>
-    <p>Curated gear for modern professionals.</p>
+    <h1 class="slogan">Quality Curated for a Modern Era.</h1>
+    <p>Your premium destination for everything essential.</p>
 </section>
 
-<div class="product-grid">
-    <!-- Product Card 1 -->
-    <div class="product-card">
-        <h3>Pro Gadget X</h3>
-        <p>The latest in innovation.</p>
-        <a href="YOUR_AMAZON_LINK" class="btn-gold">Buy on Amazon</a>
-    </div>
-    <!-- Product Card 2 -->
-    <div class="product-card">
-        <h3>Wireless Hub</h3>
-        <p>Seamless connectivity.</p>
-        <a href="YOUR_AMAZON_LINK" class="btn-gold">Buy on Amazon</a>
+<div class="catalog">
+    <div class="grid">
+        <!-- Start of Product Block 1 -->
+        <div class="card"><h3>Home Comfort Set</h3><p>Redefining your living space with premium materials.</p><a href="#" class="buy-btn">Buy on Amazon</a></div>
+        <div class="card"><h3>Tech Essentials Pro</h3><p>Innovative tools for the modern professional.</p><a href="#" class="buy-btn">Buy on Amazon</a></div>
+        <div class="card"><h3>Outdoor Adventure Kit</h3><p>Durability meets style in every environment.</p><a href="#" class="buy-btn">Buy on Amazon</a></div>
+        <div class="card"><h3>Minimalist Watch</h3><p>Precision timekeeping with a sleek design.</p><a href="#" class="buy-btn">Buy on Amazon</a></div>
+        <div class="card"><h3>Ergonomic Workspace</h3><p>Boost your productivity with comfort.</p><a href="#" class="buy-btn">Buy on Amazon</a></div>
+        <div class="card"><h3>Travel Gear Elite</h3><p>Ready for any journey, anywhere.</p><a href="#" class="buy-btn">Buy on Amazon</a></div>
+        <!-- End of Product Block 1 -->
     </div>
 </div>
 
 <footer>
-    <details><summary>About Us</summary><p>Premium gadgets for everyone.</p></details>
-    <details><summary>Privacy Policy</summary><p>Standard affiliate privacy policy applies.</p></details>
-    <p>&copy; 2026 Gadgetszzz. All rights reserved.</p>
+    <div class="footer-grid">
+        <div><h3>Company</h3><p>About Us</p><p>History</p><p>Careers</p></div>
+        <div><h3>Catalog</h3><p>Lifestyle</p><p>Tech</p><p>Office</p></div>
+        <div><h3>Legal</h3><p>Privacy Policy</p><p>Terms</p><p>Cookies</p></div>
+        <div><h3>Social</h3><p>Instagram</p><p>Twitter</p><p>YouTube</p></div>
+    </div>
+    <p>&copy; 2026 Gadgetszzz. All Rights Reserved.</p>
 </footer>
 
 </body>
