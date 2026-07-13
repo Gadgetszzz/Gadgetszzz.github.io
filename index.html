@@ -1,1 +1,53 @@
-<h1>My Store</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; }
+        
+        /* Button Style */
+        .amazon-btn {
+            background-color: #FFD814;
+            border: 1px solid #FCD200;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .amazon-btn:hover { background-color: #F7CA00; }
+
+        /* Cart Animation */
+        .cart-container {
+            font-size: 50px;
+            margin-top: 50px;
+            display: inline-block;
+            animation: moveCart 3s linear infinite;
+        }
+        .cart-container:hover {
+            animation-play-state: paused;
+            cursor: pointer;
+        }
+
+        @keyframes moveCart {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(100px); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Gadgetszzz</h1>
+    <p>Check out our latest featured product!</p>
+
+    <!-- Shopping Cart Animation -->
+    <div class="cart-container">🛒</div>
+
+    <br>
+    <!-- Buy Button -->
+    <a href="YOUR_AMAZON_AFFILIATE_LINK_HERE" class="amazon-btn">Buy on Amazon</a>
+
+</body>
+</html>
