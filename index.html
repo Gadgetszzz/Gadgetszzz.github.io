@@ -3,62 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gadgetszzz | Premium Tech Selection</title>
+    <meta name="description" content="Gadgetszzz - Premium tech gadgets and modern lifestyle accessories. Shop the latest innovations.">
+    <title>Gadgetszzz | Official Tech Store</title>
     <style>
-        body { 
-            font-family: 'Segoe UI', sans-serif; 
-            margin: 0; padding: 40px 20px;
-            background-color: #050510; color: #e0e0e0;
-            line-height: 1.6; text-align: center;
-        }
-        .container { max-width: 600px; margin: auto; }
+        :root { --dark-blue: #050510; --accent-gold: #FFD814; --text-light: #e0e0e0; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; background-color: var(--dark-blue); color: var(--text-light); line-height: 1.6; }
         
-        /* Button Style */
-        .amazon-btn {
-            background-color: #FFD814; border: none;
-            padding: 15px 30px; text-decoration: none;
-            color: black; font-weight: bold;
-            border-radius: 50px; display: inline-block;
-            margin-bottom: 40px; transition: 0.3s;
-        }
-        .amazon-btn:hover { background-color: #F7CA00; }
-
-        /* Collapsible Style */
-        details {
-            background: #0a0a1f; margin-bottom: 10px;
-            padding: 15px; border-radius: 10px;
-            border: 1px solid #1a1a3a; text-align: left;
-            cursor: pointer;
-        }
-        summary { font-weight: bold; outline: none; }
+        /* Header */
+        header { padding: 20px 40px; border-bottom: 1px solid #1a1a3a; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: white; }
+        
+        /* Product Section */
+        .hero { padding: 80px 20px; text-align: center; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px; }
+        .product-card { background: #0a0a1f; padding: 20px; border-radius: 10px; border: 1px solid #1a1a3a; }
+        
+        /* Buttons */
+        .btn-gold { background: var(--accent-gold); color: black; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; }
+        .btn-gold:hover { background: #F7CA00; }
+        
+        /* Footer */
+        footer { padding: 40px; text-align: center; border-top: 1px solid #1a1a3a; }
+        details { max-width: 600px; margin: 10px auto; background: #0a0a1f; padding: 15px; border-radius: 5px; text-align: left; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Gadgetszzz</h1>
-    <p>Curated tech for the modern lifestyle.</p>
-    
-    <a href="YOUR_AMAZON_AFFILIATE_LINK_HERE" class="amazon-btn">
-        <span style="display:inline-block; transform: scaleX(-1); margin-right: 10px;">🛒</span> Buy on Amazon
-    </a>
+<header>
+    <div class="logo">Gadgetszzz</div>
+    <nav>Shop | Deals | Support</nav>
+</header>
 
-    <!-- Collapsible Sections -->
-    <details>
-        <summary>About Us</summary>
-        <p>At Gadgetszzz, we specialize in finding the most innovative tech. We provide honest selections to help you upgrade your setup.</p>
-    </details>
+<section class="hero">
+    <h1>Elevate Your Tech Setup</h1>
+    <p>Curated gear for modern professionals.</p>
+</section>
 
-    <details>
-        <summary>Contact Us</summary>
-        <p>For business inquiries, email us at: <b>support@gadgetszzz.com</b></p>
-    </details>
-
-    <details>
-        <summary>Privacy Policy</summary>
-        <p>We respect your privacy. This site uses affiliate links to suggest products. We do not store your personal information.</p>
-    </details>
+<div class="product-grid">
+    <!-- Product Card 1 -->
+    <div class="product-card">
+        <h3>Pro Gadget X</h3>
+        <p>The latest in innovation.</p>
+        <a href="YOUR_AMAZON_LINK" class="btn-gold">Buy on Amazon</a>
+    </div>
+    <!-- Product Card 2 -->
+    <div class="product-card">
+        <h3>Wireless Hub</h3>
+        <p>Seamless connectivity.</p>
+        <a href="YOUR_AMAZON_LINK" class="btn-gold">Buy on Amazon</a>
+    </div>
 </div>
+
+<footer>
+    <details><summary>About Us</summary><p>Premium gadgets for everyone.</p></details>
+    <details><summary>Privacy Policy</summary><p>Standard affiliate privacy policy applies.</p></details>
+    <p>&copy; 2026 Gadgetszzz. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
