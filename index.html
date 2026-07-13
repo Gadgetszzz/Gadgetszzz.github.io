@@ -26,26 +26,18 @@
             cursor: pointer;
             display: inline-block;
             margin-top: 20px;
-            position: relative;
-            font-size: 1.1em;
-            transition: transform 0.2s;
+            transition: background-color 0.2s;
         }
         
-        /* Pop effect on hover */
         .amazon-btn:hover { 
             background-color: #F7CA00; 
-            transform: scale(1.05);
         }
 
-        .amazon-btn:hover .cart-icon {
-            transform: scale(1.3);
-        }
-
+        /* Cart Icon - Completely still */
         .cart-icon {
             display: inline-block;
             transform: scaleX(-1); /* Keep cart flipped */
             margin-right: 10px;
-            transition: transform 0.2s ease;
         }
     </style>
 </head>
@@ -54,7 +46,7 @@
     <h1>Welcome to Gadgetszzz</h1>
     <p>Discover our premium selection of tech.</p>
 
-    <!-- Buy Button with popping Cart -->
+    <!-- Buy Button with static Cart -->
     <a href="YOUR_AMAZON_AFFILIATE_LINK_HERE" class="amazon-btn">
         <span class="cart-icon">🛒</span> Buy on Amazon
     </a>
