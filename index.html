@@ -2,29 +2,44 @@
 <html lang="en">
 <head>
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            text-align: center; 
+            padding: 50px; 
+            background: linear-gradient(135deg, #000000 0%, #0a0a2e 100%); 
+            color: white;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        h1 { color: #ffffff; }
         
         /* Button Style */
         .amazon-btn {
             background-color: #FFD814;
-            border: 1px solid #FCD200;
+            border: none;
             padding: 15px 30px;
             text-decoration: none;
             color: black;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             display: inline-block;
             margin-top: 20px;
             position: relative;
-            overflow: hidden; /* Keeps the animation inside the button */
+            overflow: hidden;
+            font-size: 1.1em;
+            transition: transform 0.2s;
         }
-        .amazon-btn:hover { background-color: #F7CA00; }
+        .amazon-btn:hover { 
+            background-color: #F7CA00; 
+            transform: scale(1.05);
+        }
 
         /* Mirrored Cart Animation */
         .cart-container {
             display: inline-block;
-            transform: scaleX(-1); /* Flips the cart to face left */
+            transform: scaleX(-1);
             margin-right: 10px;
             animation: moveCart 3s linear infinite;
         }
@@ -35,14 +50,15 @@
 
         @keyframes moveCart {
             0% { transform: scaleX(-1) translateX(20px); }
-            100% { transform: scaleX(-1) translateX(-20px); }
+            50% { transform: scaleX(-1) translateX(-20px); }
+            100% { transform: scaleX(-1) translateX(20px); }
         }
     </style>
 </head>
 <body>
 
     <h1>Welcome to Gadgetszzz</h1>
-    <p>Check out our latest featured product!</p>
+    <p>Discover our premium selection of tech.</p>
 
     <!-- Buy Button with integrated Cart -->
     <a href="YOUR_AMAZON_AFFILIATE_LINK_HERE" class="amazon-btn">
