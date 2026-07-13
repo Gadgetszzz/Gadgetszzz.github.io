@@ -4,20 +4,20 @@
 <head>
 
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Gadgetszzz | Discover Amazon's Best Products</title>
 
-<meta name="description" content="Discover the best Amazon products in Electronics, Home, Kitchen, Gaming, Travel, Fitness and more. Carefully curated Amazon finds from Gadgetszzz.">
+<meta name="description" content="Discover hand-picked Amazon products across electronics, gaming, home, kitchen, travel, fitness, fashion, beauty, pets and more.">
 
-<meta name="keywords" content="Amazon Finds, Amazon Products, Gadgetszzz, Tech, Gaming, Kitchen, Electronics, Home, Office, Travel">
+<meta name="keywords" content="Amazon Finds, Gadgetszzz, Amazon Affiliate, Electronics, Home, Gaming">
 
 <meta name="author" content="Gadgetszzz">
 
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index,follow">
 
-<meta name="theme-color" content="#050510">
+<meta name="theme-color" content="#070b17">
 
 <meta property="og:title" content="Gadgetszzz">
 
@@ -31,10 +31,6 @@
 
 <meta name="twitter:card" content="summary_large_image">
 
-<meta name="twitter:title" content="Gadgetszzz">
-
-<meta name="twitter:description" content="Curated Amazon Finds">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,13 +41,20 @@
 
 :root{
 
---bg:#050510;
---card:#101020;
---gold:#FFB300;
---orange:#FF9900;
---text:#ffffff;
---gray:#cfcfcf;
---border:#202040;
+--bg:#070b17;
+--bg2:#10182b;
+--card:#161f35;
+--card2:#1d2741;
+
+--orange:#ff9900;
+--gold:#ffd24d;
+
+--white:#ffffff;
+--text:#d7d7d7;
+
+--border:rgba(255,255,255,.08);
+
+--radius:22px;
 
 }
 
@@ -59,21 +62,32 @@
 
 margin:0;
 padding:0;
+
 box-sizing:border-box;
-scroll-behavior:smooth;
+
 font-family:'Poppins',sans-serif;
+
+scroll-behavior:smooth;
+
+}
+
+html{
+
+scroll-behavior:smooth;
 
 }
 
 body{
 
 background:var(--bg);
-color:var(--text);
+
+color:var(--white);
+
 overflow-x:hidden;
 
-}
+line-height:1.7;
 
-/* Animated Aurora */
+}
 
 body::before{
 
@@ -81,21 +95,21 @@ content:"";
 
 position:fixed;
 
-width:700px;
-height:700px;
+width:750px;
+height:750px;
 
 background:#ff9900;
 
+left:-250px;
+top:-250px;
+
+opacity:.10;
+
 filter:blur(180px);
 
-opacity:.12;
+z-index:-2;
 
-top:-250px;
-left:-250px;
-
-animation:blob1 20s infinite alternate;
-
-z-index:-5;
+animation:blob1 22s infinite alternate;
 
 }
 
@@ -105,21 +119,21 @@ content:"";
 
 position:fixed;
 
-width:600px;
-height:600px;
+width:700px;
+height:700px;
 
-background:#3b82f6;
+background:#2563eb;
 
-filter:blur(170px);
+right:-250px;
+bottom:-250px;
 
-opacity:.10;
+opacity:.09;
 
-right:-200px;
-bottom:-200px;
+filter:blur(180px);
+
+z-index:-2;
 
 animation:blob2 24s infinite alternate;
-
-z-index:-5;
 
 }
 
@@ -133,7 +147,7 @@ transform:translate(0,0);
 
 100%{
 
-transform:translate(300px,200px);
+transform:translate(350px,250px);
 
 }
 
@@ -149,13 +163,11 @@ transform:translate(0,0);
 
 100%{
 
-transform:translate(-250px,-180px);
+transform:translate(-320px,-240px);
 
 }
 
 }
-
-/* Scroll Bar */
 
 ::-webkit-scrollbar{
 
@@ -163,11 +175,172 @@ width:10px;
 
 }
 
+::-webkit-scrollbar-track{
+
+background:#0a0f1c;
+
+}
+
 ::-webkit-scrollbar-thumb{
 
 background:var(--orange);
 
-border-radius:20px;
+border-radius:999px;
+
+}
+
+::selection{
+
+background:var(--orange);
+
+color:#000;
+
+}
+
+img{
+
+display:block;
+
+max-width:100%;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+button{
+
+font-family:inherit;
+
+cursor:pointer;
+
+}
+
+.container{
+
+width:min(1400px,92%);
+
+margin:auto;
+
+}
+
+.section{
+
+padding:110px 0;
+
+}
+
+.section-title{
+
+font-size:54px;
+
+font-weight:800;
+
+text-align:center;
+
+margin-bottom:18px;
+
+}
+
+.section-text{
+
+max-width:800px;
+
+margin:auto;
+
+text-align:center;
+
+color:var(--text);
+
+margin-bottom:70px;
+
+font-size:18px;
+
+}
+
+#progress{
+
+position:fixed;
+
+top:0;
+left:0;
+
+height:4px;
+
+width:0;
+
+background:linear-gradient(90deg,#ff9900,#ffd24d);
+
+z-index:999999;
+
+}
+
+#loader{
+
+position:fixed;
+
+inset:0;
+
+background:#070b17;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+transition:.5s;
+
+}
+
+.loader{
+
+width:90px;
+height:90px;
+
+border-radius:50%;
+
+border:8px solid rgba(255,255,255,.08);
+
+border-top:8px solid var(--orange);
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+  @keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
 }
 
@@ -176,10 +349,11 @@ header{
 position:fixed;
 
 top:0;
+left:0;
 
 width:100%;
 
-padding:22px 8%;
+padding:20px 8%;
 
 display:flex;
 
@@ -187,13 +361,13 @@ justify-content:space-between;
 
 align-items:center;
 
-background:rgba(5,5,16,.75);
+background:rgba(7,11,23,.82);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(18px);
 
-border-bottom:1px solid rgba(255,255,255,.08);
+border-bottom:1px solid var(--border);
 
-z-index:999;
+z-index:1000;
 
 }
 
@@ -203,11 +377,9 @@ font-size:34px;
 
 font-weight:800;
 
-text-decoration:none;
+letter-spacing:2px;
 
-color:white;
-
-letter-spacing:3px;
+color:var(--white);
 
 }
 
@@ -221,29 +393,23 @@ nav{
 
 display:flex;
 
-gap:28px;
+align-items:center;
+
+gap:34px;
 
 }
 
 nav a{
 
-color:white;
-
-text-decoration:none;
+color:var(--white);
 
 font-weight:500;
 
-transition:.35s;
+transition:.3s;
 
 cursor:pointer;
 
 position:relative;
-
-}
-
-nav a:hover{
-
-color:var(--orange);
 
 }
 
@@ -263,7 +429,13 @@ height:2px;
 
 background:var(--orange);
 
-transition:.35s;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:var(--orange);
 
 }
 
@@ -285,7 +457,9 @@ align-items:center;
 
 text-align:center;
 
-padding:170px 20px 100px;
+padding:170px 8% 100px;
+
+animation:fadeUp 1s ease;
 
 }
 
@@ -297,13 +471,13 @@ max-width:950px;
 
 .hero h1{
 
-font-size:76px;
+font-size:78px;
 
-line-height:1.05;
-
-margin-bottom:25px;
+line-height:1.1;
 
 font-weight:800;
+
+margin-bottom:28px;
 
 }
 
@@ -317,15 +491,13 @@ color:var(--orange);
 
 font-size:21px;
 
-color:var(--gray);
+color:var(--text);
 
 margin-bottom:45px;
 
-line-height:1.8;
-
 }
 
-.buttons{
+.hero-buttons{
 
 display:flex;
 
@@ -334,6 +506,8 @@ justify-content:center;
 gap:20px;
 
 flex-wrap:wrap;
+
+margin-bottom:50px;
 
 }
 
@@ -345,103 +519,115 @@ border-radius:999px;
 
 font-weight:700;
 
-text-decoration:none;
-
 transition:.35s;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
 
 cursor:pointer;
 
 }
 
-.primary{
+.btn-primary{
 
 background:var(--orange);
 
-color:black;
+color:#000;
 
-box-shadow:0 0 40px rgba(255,153,0,.3);
-
-}
-
-.primary:hover{
-
-transform:translateY(-6px);
-
-box-shadow:0 0 60px rgba(255,153,0,.6);
+box-shadow:0 0 30px rgba(255,153,0,.35);
 
 }
 
-.secondary{
+.btn-primary:hover{
 
-border:2px solid rgba(255,255,255,.15);
+transform:translateY(-5px);
 
-color:white;
-
-}
-
-.secondary:hover{
-
-background:white;
-
-color:black;
+box-shadow:0 0 55px rgba(255,153,0,.5);
 
 }
 
-.search{
+.btn-secondary{
 
-margin-top:60px;
+border:2px solid rgba(255,255,255,.1);
+
+color:var(--white);
+
+}
+
+.btn-secondary:hover{
+
+background:var(--white);
+
+color:#000;
+
+}
+
+.search-box{
 
 display:flex;
 
 justify-content:center;
 
+margin-bottom:50px;
+
 }
 
-.search input{
+.search-box input{
 
-width:700px;
+width:760px;
 
-max-width:92%;
+max-width:95%;
 
-padding:18px 28px;
+padding:20px 28px;
 
-border-radius:50px;
+border-radius:999px;
 
-background:#111122;
+background:var(--card);
 
-border:1px solid rgba(255,255,255,.08);
+border:1px solid var(--border);
 
 outline:none;
 
+font-size:17px;
+
 color:white;
 
-font-size:17px;
+transition:.3s;
 
 }
 
-.categories{
+.search-box input:focus{
 
-padding:40px 8% 100px;
+border-color:var(--orange);
+
+box-shadow:0 0 25px rgba(255,153,0,.2);
+
+}
+
+.quick-links{
 
 display:flex;
 
 justify-content:center;
 
-gap:18px;
-
 flex-wrap:wrap;
+
+gap:16px;
 
 }
 
-.category{
+.quick-links a{
 
 padding:14px 24px;
 
-border-radius:50px;
+border-radius:999px;
 
-background:#111122;
+background:var(--card);
 
-border:1px solid rgba(255,255,255,.08);
+border:1px solid var(--border);
 
 transition:.3s;
 
@@ -449,165 +635,42 @@ cursor:pointer;
 
 }
 
-.category:hover{
+.quick-links a:hover{
 
 background:var(--orange);
 
-color:black;
+color:#000;
 
 transform:translateY(-5px);
 
 }
+  @media(max-width:992px){
 
-.section{
+.hero h1{
 
-padding:100px 8%;
+font-size:56px;
 
 }
 
 .section-title{
 
-font-size:48px;
-
-text-align:center;
-
-margin-bottom:15px;
+font-size:42px;
 
 }
 
-.section-text{
+nav{
 
-text-align:center;
-
-color:var(--gray);
-
-margin-bottom:60px;
+gap:18px;
 
 }
 
-.grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-gap:30px;
-
 }
 
-.card{
+@media(max-width:768px){
 
-background:var(--card);
+header{
 
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:22px;
-
-overflow:hidden;
-
-transition:.35s;
-
-cursor:pointer;
-
-}
-
-.card:hover{
-
-transform:translateY(-12px);
-
-border-color:var(--orange);
-
-box-shadow:0 25px 50px rgba(255,153,0,.15);
-
-}
-
-.card img{
-
-width:100%;
-
-height:250px;
-
-object-fit:cover;
-
-}
-
-.badge{
-
-display:inline-block;
-
-background:var(--orange);
-
-color:black;
-
-padding:7px 16px;
-
-border-radius:999px;
-
-font-size:13px;
-
-font-weight:700;
-
-margin:20px;
-
-}
-
-.card-content{
-
-padding:0 20px 25px;
-
-}
-
-.card-content h3{
-
-margin-bottom:12px;
-
-}
-
-.card-content p{
-
-color:var(--gray);
-
-margin-bottom:25px;
-
-}
-
-.amazon-btn{
-
-display:block;
-
-width:100%;
-
-padding:16px;
-
-text-align:center;
-
-background:var(--orange);
-
-color:black;
-
-font-weight:700;
-
-border-radius:12px;
-
-text-decoration:none;
-
-transition:.35s;
-
-cursor:pointer;
-
-}
-
-.amazon-btn:hover{
-
-transform:scale(1.03);
-
-}
-
-@media(max-width:900px){
-
-.hero h1{
-
-font-size:48px;
+padding:18px 6%;
 
 }
 
@@ -617,6 +680,329 @@ display:none;
 
 }
 
+.hero{
+
+padding:150px 6% 80px;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.btn{
+
+width:100%;
+
+max-width:340px;
+
+}
+
+.search-box input{
+
+width:100%;
+
+}
+
+.section{
+
+padding:80px 0;
+
+}
+
+.section-title{
+
+font-size:36px;
+
+}
+
+}
+
+.product-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+.product-card{
+
+background:linear-gradient(180deg,var(--card),var(--card2));
+
+border:1px solid var(--border);
+
+border-radius:var(--radius);
+
+overflow:hidden;
+
+transition:.35s;
+
+position:relative;
+
+cursor:pointer;
+
+}
+
+.product-card:hover{
+
+transform:translateY(-10px);
+
+border-color:var(--orange);
+
+box-shadow:0 20px 45px rgba(255,153,0,.22);
+
+}
+
+.product-image{
+
+height:260px;
+
+overflow:hidden;
+
+background:#0b1220;
+
+}
+
+.product-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.4s;
+
+}
+
+.product-card:hover .product-image img{
+
+transform:scale(1.08);
+
+}
+
+.badge{
+
+position:absolute;
+
+top:18px;
+
+left:18px;
+
+background:var(--orange);
+
+color:#000;
+
+padding:8px 16px;
+
+border-radius:999px;
+
+font-size:13px;
+
+font-weight:700;
+
+}
+
+.favorite{
+
+position:absolute;
+
+top:18px;
+
+right:18px;
+
+width:42px;
+
+height:42px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:50%;
+
+background:rgba(0,0,0,.45);
+
+backdrop-filter:blur(10px);
+
+cursor:pointer;
+
+transition:.3s;
+
+font-size:20px;
+
+}
+
+.favorite:hover{
+
+background:var(--orange);
+
+transform:scale(1.1);
+
+color:#000;
+
+}
+  .product-content{
+
+padding:24px;
+
+}
+
+.product-category{
+
+display:inline-block;
+
+font-size:13px;
+
+font-weight:600;
+
+color:var(--orange);
+
+margin-bottom:12px;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+}
+
+.product-title{
+
+font-size:24px;
+
+font-weight:700;
+
+margin-bottom:14px;
+
+line-height:1.3;
+
+}
+
+.product-description{
+
+color:var(--text);
+
+font-size:15px;
+
+line-height:1.8;
+
+margin-bottom:24px;
+
+min-height:78px;
+
+}
+
+.amazon-btn{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+width:100%;
+
+padding:16px;
+
+border-radius:14px;
+
+background:linear-gradient(90deg,#ff9900,#ffb300);
+
+color:#000;
+
+font-weight:700;
+
+font-size:16px;
+
+transition:.35s;
+
+cursor:pointer;
+
+user-select:none;
+
+}
+
+.amazon-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 0 35px rgba(255,153,0,.45);
+
+}
+
+.amazon-btn:active{
+
+transform:scale(.97);
+
+}
+
+.amazon-btn::after{
+
+content:"→";
+
+transition:.3s;
+
+}
+
+.amazon-btn:hover::after{
+
+transform:translateX(6px);
+
+}
+
+.section-divider{
+
+width:120px;
+
+height:4px;
+
+background:linear-gradient(90deg,#ff9900,#ffd54d);
+
+margin:20px auto 50px;
+
+border-radius:999px;
+
+}
+
+.glow{
+
+position:absolute;
+
+width:180px;
+
+height:180px;
+
+background:rgba(255,153,0,.08);
+
+filter:blur(80px);
+
+border-radius:50%;
+
+pointer-events:none;
+
 }
 
 </style>
@@ -625,11 +1011,19 @@ display:none;
 
 <body>
 
+<div id="loader">
+
+<div class="loader"></div>
+
+</div>
+
+<div id="progress"></div>
+
 <header>
 
 <a href="#" class="logo">
 
-GADGETS<span>ZZZ</span>
+Gadgets<span>zzz</span>
 
 </a>
 
@@ -651,6 +1045,8 @@ GADGETS<span>ZZZ</span>
 
 <section class="hero">
 
+<div class="container">
+
 <div class="hero-content">
 
 <h1>
@@ -663,71 +1059,67 @@ Products
 
 <p>
 
-Explore carefully selected Amazon products across electronics,
-gaming, home, travel, fitness, kitchen, office and more.
-
-Every recommendation is chosen to help you shop smarter.
+Hand-picked Amazon products across electronics, gaming, home, kitchen, travel, fitness, beauty, pets and more.
 
 </p>
 
-<div class="buttons">
+<div class="hero-buttons">
 
-<a href="#featured" class="btn primary">
+<a href="#featured" class="btn btn-primary">
 
-Browse Amazon Finds
+🛒 Browse Products
 
 </a>
 
-<a href="#about" class="btn secondary">
+<a href="#about" class="btn btn-secondary">
 
-Why Gadgetszzz?
+Learn More
 
 </a>
 
 </div>
 
-<div class="search">
+<div class="search-box">
 
 <input
 type="text"
 id="searchInput"
-placeholder="Search Amazon products...">
+placeholder="Search products...">
+
+</div>
+
+<div class="quick-links" id="categories">
+  <a href="#electronics">💻 Electronics</a>
+
+<a href="#gaming">🎮 Gaming</a>
+
+<a href="#home">🏠 Home</a>
+
+<a href="#kitchen">🍳 Kitchen</a>
+
+<a href="#fitness">🏋 Fitness</a>
+
+<a href="#travel">✈️ Travel</a>
+
+<a href="#beauty">💄 Beauty</a>
+
+<a href="#pets">🐶 Pets</a>
+
+<a href="#office">💼 Office</a>
+
+<a href="#fashion">👕 Fashion</a>
 
 </div>
 
 </div>
 
-</section>
-
-<section class="categories" id="categories">
-
-<div class="category">💻 Electronics</div>
-
-<div class="category">🏠 Home</div>
-
-<div class="category">🍳 Kitchen</div>
-
-<div class="category">🎮 Gaming</div>
-
-<div class="category">🏋 Fitness</div>
-
-<div class="category">✈ Travel</div>
-
-<div class="category">🚗 Automotive</div>
-
-<div class="category">💄 Beauty</div>
-
-<div class="category">🐶 Pets</div>
-
-<div class="category">📚 Office</div>
-
-<div class="category">🌲 Outdoor</div>
-
-<div class="category">👕 Fashion</div>
+</div>
 
 </section>
 
 <section class="section" id="featured">
+
+<div class="container">
 
 <h2 class="section-title">
 
@@ -735,299 +1127,709 @@ placeholder="Search Amazon products...">
 
 </h2>
 
+<div class="section-divider"></div>
+
 <p class="section-text">
 
-Hand-picked products worth checking out.
+Explore carefully selected Amazon products chosen for quality, usefulness, and value.
 
 </p>
 
-<div class="grid">
+<div class="product-grid">
 
-<div class="card" data-name="Wireless Earbuds" data-category="electronics">
-<img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80" alt="Wireless Earbuds">
-<span class="badge">Amazon Choice</span>
-<div class="card-content">
-<h3>Wireless Earbuds</h3>
-<p>Crystal-clear sound, deep bass, Bluetooth 5.3 and all-day battery life.</p>
-<p>⭐⭐⭐⭐⭐ 4.8/5</p>
-<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
-</div>
+<div class="product-card">
+
+<div class="badge">
+
+🔥 Best Seller
+
 </div>
 
-<div class="card" data-name="Mechanical Keyboard" data-category="gaming">
-<img src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&w=800&q=80" alt="Mechanical Keyboard">
-<span class="badge">Best Seller</span>
-<div class="card-content">
-<h3>Mechanical Keyboard</h3>
-<p>RGB backlit mechanical switches for gaming and productivity.</p>
-<p>⭐⭐⭐⭐⭐ 4.9/5</p>
-<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
-</div>
+<div class="favorite">
+
+❤
+
 </div>
 
-<div class="card" data-name="Gaming Mouse" data-category="gaming">
-<img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80" alt="Gaming Mouse">
-<span class="badge">Trending</span>
-<div class="card-content">
-<h3>Gaming Mouse</h3>
-<p>Ultra-fast optical sensor with customizable RGB lighting.</p>
-<p>⭐⭐⭐⭐⭐ 4.8/5</p>
-<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
-</div>
+<div class="product-image">
+
+<img src="images/earbuds.jpg"
+
+alt="Wireless Earbuds">
+
 </div>
 
-<div class="card" data-name="Smart Watch" data-category="fitness">
-<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Smart Watch">
-<span class="badge">Top Rated</span>
-<div class="card-content">
-<h3>Smart Watch</h3>
-<p>Track fitness, sleep, heart rate and receive notifications.</p>
-<p>⭐⭐⭐⭐⭐ 4.7/5</p>
-<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
-</div>
+<div class="product-content">
+
+<span class="product-category">
+
+Electronics
+
+</span>
+
+<h3 class="product-title">
+
+Wireless Earbuds
+
+</h3>
+
+<p class="product-description">
+
+Crystal-clear sound, long battery life and comfortable all-day wear.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
 </div>
 
-<div class="card" data-name="Air Fryer" data-category="kitchen">
-<img src="https://images.unsplash.com/photo-1585515656973-5e35b31a2d5f?auto=format&fit=crop&w=800&q=80" alt="Air Fryer">
-<span class="badge">Hot Deal</span>
-<div class="card-content">
-<h3>Air Fryer</h3>
-<p>Cook delicious meals with less oil and faster cooking times.</p>
-<p>⭐⭐⭐⭐⭐ 4.8/5</p>
-<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
-</div>
 </div>
 
-<div class="card" data-name="Robot Vacuum" data-category="home">
-<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Robot Vacuum">
-<span class="badge">Editor's Pick</span>
-<div class="card-content">
-<h3>Robot Vacuum</h3>
-<p>Automatically cleans carpets and hard floors with smart navigation.</p>
-<p>⭐⭐⭐⭐⭐ 4.9/5</p>
-<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
-</div>
+<div class="product-card">
+
+<div class="badge">
+
+⭐ Editor's Choice
+
 </div>
 
-<div class="card" data-name="Coffee Maker" data-category="kitchen">
-<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Coffee Maker">
-<span class="badge">Popular</span>
-<div class="card-content">
-<h3>Coffee Maker</h3>
-<p>Brew fresh coffee every morning with one-touch convenience.</p>
-<p>⭐⭐⭐⭐⭐ 4.8/5</p>
-<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
-</div>
+<div class="favorite">
+
+❤
+
 </div>
 
-<div class="card" data-name="Standing Desk" data-category="office">
-<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80" alt="Standing Desk">
-<span class="badge">Office Pick</span>
-<div class="card-content">
-<h3>Standing Desk</h3>
-<p>Electric height adjustment for a healthier workspace.</p>
-<p>⭐⭐⭐⭐⭐ 4.8/5</p>
-<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
-</div>
+<div class="product-image">
+
+<img src="images/keyboard.jpg"
+
+alt="Mechanical Keyboard">
+
 </div>
 
-<div class="card" data-name="Travel Backpack" data-category="travel">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Travel Backpack">
-<span class="badge">Traveler's Choice</span>
-<div class="card-content">
-<h3>Travel Backpack</h3>
-<p>Water-resistant backpack with USB charging port.</p>
-<p>⭐⭐⭐⭐⭐ 4.8/5</p>
-<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
-</div>
+<div class="product-content">
+
+<span class="product-category">
+
+Gaming
+
+</span>
+
+<h3 class="product-title">
+
+Mechanical Keyboard
+
+</h3>
+
+<p class="product-description">
+
+Responsive switches with premium RGB lighting for gaming and productivity.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
 </div>
 
-<div class="card" data-name="Power Bank" data-category="electronics">
-<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=800&q=80" alt="Power Bank">
-<span class="badge">Must Have</span>
-<div class="card-content">
-<h3>Power Bank</h3>
-<p>High-capacity portable charger with fast charging support.</p>
-<p>⭐⭐⭐⭐⭐ 4.8/5</p>
-<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
-</div>
 </div>
 
-<div class="card" data-name="Bluetooth Speaker" data-category="electronics">
-<img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80" alt="Bluetooth Speaker">
-<span class="badge">Trending</span>
-<div class="card-content">
-<h3>Bluetooth Speaker</h3>
-<p>Rich sound with waterproof design for indoor and outdoor use.</p>
-<p>⭐⭐⭐⭐⭐ 4.7/5</p>
-<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
-</div>
+<div class="product-card">
+
+<div class="badge">
+
+🚀 Trending
+
 </div>
 
-<div class="card" data-name="Portable SSD" data-category="electronics">
-<img src="https://images.unsplash.com/photo-1593642634443-44adaa06623a?auto=format&fit=crop&w=800&q=80" alt="Portable SSD">
-<span class="badge">Fast Storage</span>
-<div class="card-content">
-<h3>Portable SSD</h3>
-<p>Lightning-fast storage for photos, videos and games.</p>
-<p>⭐⭐⭐⭐⭐ 4.9/5</p>
-<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
+<div class="favorite">
+
+❤
+
 </div>
+
+<div class="product-image">
+
+<img src="images/robotvacuum.jpg"
+
+alt="Robot Vacuum">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Home
+
+</span>
+
+<h3 class="product-title">
+
+Robot Vacuum
+
+</h3>
+
+<p class="product-description">
+
+Smart automatic cleaning with efficient navigation for everyday use.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+<div class="product-card">
+
+<div class="badge">
+
+🍳 Kitchen Pick
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/airfryer.jpg"
+
+alt="Digital Air Fryer">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Kitchen
+
+</span>
+
+<h3 class="product-title">
+
+Digital Air Fryer
+
+</h3>
+
+<p class="product-description">
+
+Prepare crispy meals with less oil using easy digital controls and multiple cooking presets.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+💪 Fitness
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/smartwatch.jpg"
+
+alt="Smart Watch">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Fitness
+
+</span>
+
+<h3 class="product-title">
+
+Smart Watch
+
+</h3>
+
+<p class="product-description">
+
+Track workouts, heart rate, sleep, notifications and everyday activity with style.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+✈️ Travel
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/backpack.jpg"
+
+alt="Travel Backpack">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Travel
+
+</span>
+
+<h3 class="product-title">
+
+Travel Backpack
+
+</h3>
+
+<p class="product-description">
+
+A spacious backpack with multiple compartments for travel, work and everyday adventures.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
 
 </section>
 
-<section class="section">
+<section class="section" id="electronics">
+
+<div class="container">
 
 <h2 class="section-title">
-🔥 Trending Today
+
+💻 Electronics
+
 </h2>
 
+<div class="section-divider"></div>
+
 <p class="section-text">
-The hottest Amazon products shoppers are loving right now.
+
+Discover top-rated electronics and everyday tech accessories available on Amazon.
+
 </p>
 
-<div class="grid">
+<div class="product-grid">
+  <div class="product-card">
 
-<div class="card" data-name="LED Desk Lamp" data-category="office">
-<img src="https://picsum.photos/600/400?random=13" alt="LED Desk Lamp">
-<span class="badge">Work Setup</span>
-<div class="card-content">
-<h3>LED Desk Lamp</h3>
-<p>Eye-care lighting with adjustable brightness and USB charging.</p>
-<p>⭐⭐⭐⭐⭐ 4.8/5</p>
-<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
-</div>
+<div class="badge">
+
+🎧 Audio
+
 </div>
 
-<div class="card" data-name="Dash Camera" data-category="automotive">
-<img src="https://picsum.photos/600/400?random=14" alt="Dash Camera">
-<span class="badge">Driver Pick</span>
-<div class="card-content">
-<h3>Dash Camera</h3>
-<p>Record every drive in crystal-clear Full HD for added peace of mind.</p>
-<p>⭐⭐⭐⭐⭐ 4.7/5</p>
-<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
-</div>
+<div class="favorite">
+
+❤
+
 </div>
 
-<div class="card" data-name="Electric Toothbrush" data-category="beauty">
-<img src="https://picsum.photos/600/400?random=15" alt="Electric Toothbrush">
-<span class="badge">Healthy Living</span>
-<div class="card-content">
-<h3>Electric Toothbrush</h3>
-<p>Professional cleaning with multiple brushing modes.</p>
-<p>⭐⭐⭐⭐⭐ 4.8/5</p>
-<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
-</div>
+<div class="product-image">
+
+<img src="images/bluetoothspeaker.jpg"
+
+alt="Bluetooth Speaker">
+
 </div>
 
-<div class="card" data-name="Camping Lantern" data-category="outdoor">
-<img src="https://picsum.photos/600/400?random=16" alt="Camping Lantern">
-<span class="badge">Outdoor</span>
-<div class="card-content">
-<h3>Camping Lantern</h3>
-<p>Bright rechargeable lantern perfect for camping and emergencies.</p>
-<p>⭐⭐⭐⭐⭐ 4.8/5</p>
-<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
-</div>
-</div>
+<div class="product-content">
 
-<div class="card" data-name="Pet Water Fountain" data-category="pets">
-<img src="https://picsum.photos/600/400?random=17" alt="Pet Water Fountain">
-<span class="badge">Pet Favorite</span>
-<div class="card-content">
-<h3>Pet Water Fountain</h3>
-<p>Fresh filtered water for cats and dogs all day long.</p>
-<p>⭐⭐⭐⭐⭐ 4.8/5</p>
-<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
-</div>
-</div>
+<span class="product-category">
 
-<div class="card" data-name="Yoga Mat" data-category="fitness">
-<img src="https://picsum.photos/600/400?random=18" alt="Yoga Mat">
-<span class="badge">Fitness</span>
-<div class="card-content">
-<h3>Yoga Mat</h3>
-<p>Comfortable non-slip surface for yoga, stretching and workouts.</p>
-<p>⭐⭐⭐⭐⭐ 4.8/5</p>
-<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
-</div>
-</div>
+Electronics
 
-<div class="card" data-name="Mini Projector" data-category="electronics">
-<img src="https://picsum.photos/600/400?random=19" alt="Mini Projector">
-<span class="badge">Movie Night</span>
-<div class="card-content">
-<h3>Mini Projector</h3>
-<p>Enjoy movies and gaming on a large screen anywhere.</p>
-<p>⭐⭐⭐⭐⭐ 4.7/5</p>
-<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
-</div>
-</div>
+</span>
 
-<div class="card" data-name="Espresso Machine" data-category="kitchen">
-<img src="https://picsum.photos/600/400?random=20" alt="Espresso Machine">
-<span class="badge">Coffee Lovers</span>
-<div class="card-content">
-<h3>Espresso Machine</h3>
-<p>Create café-quality espresso and cappuccino at home.</p>
-<p>⭐⭐⭐⭐⭐ 4.9/5</p>
-<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
-</div>
-</div>
+<h3 class="product-title">
 
-<div class="card" data-name="Noise Cancelling Headphones" data-category="electronics">
-<img src="https://picsum.photos/600/400?random=21" alt="Headphones">
-<span class="badge">Premium</span>
-<div class="card-content">
-<h3>Noise Cancelling Headphones</h3>
-<p>Block outside noise while enjoying rich immersive audio.</p>
-<p>⭐⭐⭐⭐⭐ 4.9/5</p>
-<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
-</div>
-</div>
+Portable Bluetooth Speaker
 
-<div class="card" data-name="Laptop Stand" data-category="office">
-<img src="https://picsum.photos/600/400?random=22" alt="Laptop Stand">
-<span class="badge">Office</span>
-<div class="card-content">
-<h3>Laptop Stand</h3>
-<p>Improve posture and airflow while working from home.</p>
-<p>⭐⭐⭐⭐⭐ 4.8/5</p>
-<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
-</div>
-</div>
+</h3>
 
-<div class="card" data-name="Top Picks Under $50" data-category="featured">
-<span class="badge">Budget Friendly</span>
+<p class="product-description">
 
-<div class="card-content">
+Rich stereo sound, deep bass and long battery life for music anywhere.
 
-<h3>💰 Top Picks Under $50</h3>
-
-<p>
-Great Amazon products that offer excellent value without breaking the bank.
-Perfect for gifts, upgrades, and everyday essentials.
 </p>
 
-</div>
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
 
 </div>
 
-<div class="card" data-name="Editor's Choice" data-category="featured">
-<span class="badge">Editor's Choice</span>
+</div>
 
-<div class="card-content">
+<div class="product-card">
 
-<h3>🏆 Our Favorite Finds</h3>
+<div class="badge">
 
-<p>
-Each week we feature products that stand out for quality, customer reviews,
-and overall value.
+⚡ Fast Charging
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/powerbank.jpg"
+
+alt="Power Bank">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Electronics
+
+</span>
+
+<h3 class="product-title">
+
+Fast Charging Power Bank
+
+</h3>
+
+<p class="product-description">
+
+Keep your devices charged wherever you go with high-speed USB-C charging.
+
 </p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🖥 Desk Setup
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/monitorlight.jpg"
+
+alt="Monitor Light Bar">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Office
+
+</span>
+
+<h3 class="product-title">
+
+Monitor Light Bar
+
+</h3>
+
+<p class="product-description">
+
+Reduce eye strain with adjustable brightness and a clean, modern desk setup.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+⌚ Smart Tech
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/smartband.jpg"
+
+alt="Fitness Smart Band">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Electronics
+
+</span>
+
+<h3 class="product-title">
+
+Fitness Smart Band
+
+</h3>
+
+<p class="product-description">
+
+Track activity, sleep, heart rate and daily goals with a lightweight smart band.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+📷 Creator Pick
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/tripod.jpg"
+
+alt="Phone Tripod">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Accessories
+
+</span>
+
+<h3 class="product-title">
+
+Phone Tripod Stand
+
+</h3>
+
+<p class="product-description">
+
+Perfect for videos, streaming, photography and online meetings with adjustable height.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+💾 Storage
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/ssd.jpg"
+
+alt="Portable SSD">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Electronics
+
+</span>
+
+<h3 class="product-title">
+
+Portable SSD Drive
+
+</h3>
+
+<p class="product-description">
+
+Fast external storage for photos, videos, games and important files on the go.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
 
 </div>
 
@@ -1037,130 +1839,2536 @@ and overall value.
 
 </section>
 
-<section class="section">
+<section class="section" id="gaming">
+
+<div class="container">
 
 <h2 class="section-title">
-📊 Gadgetszzz by the Numbers
+
+🎮 Gaming
+
 </h2>
 
+<div class="section-divider"></div>
+
 <p class="section-text">
-Growing every day with carefully selected Amazon products.
+
+Upgrade your gaming setup with Amazon's top gaming accessories and gear.
+
 </p>
 
-<div class="grid">
+<div class="product-grid">
+  <div class="product-card">
 
-<div class="card">
-<div class="card-content">
-<h2>500+</h2>
-<p>Curated Amazon Products</p>
-</div>
-</div>
+<div class="badge">
 
-<div class="card">
-<div class="card-content">
-<h2>12+</h2>
-<p>Shopping Categories</p>
-</div>
+🖱️ Gaming Gear
+
 </div>
 
-<div class="card">
-<div class="card-content">
-<h2>24/7</h2>
-<p>Available Online</p>
-</div>
+<div class="favorite">
+
+❤
+
 </div>
 
-<div class="card">
-<div class="card-content">
-<h2>100%</h2>
-<p>Amazon Focused</p>
+<div class="product-image">
+
+<img src="images/gamingmouse.jpg"
+
+alt="Gaming Mouse">
+
 </div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Gaming
+
+</span>
+
+<h3 class="product-title">
+
+RGB Gaming Mouse
+
+</h3>
+
+<p class="product-description">
+
+High precision sensor with programmable buttons and customizable RGB lighting.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🎧 Immersive Audio
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/gamingheadset.jpg"
+
+alt="Gaming Headset">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Gaming
+
+</span>
+
+<h3 class="product-title">
+
+Gaming Headset
+
+</h3>
+
+<p class="product-description">
+
+Comfortable over-ear headset with crystal-clear microphone and immersive surround sound.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+⌨️ Mechanical
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/rgbkeyboard.jpg"
+
+alt="RGB Keyboard">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Gaming
+
+</span>
+
+<h3 class="product-title">
+
+RGB Mechanical Keyboard
+
+</h3>
+
+<p class="product-description">
+
+Responsive mechanical switches with vibrant RGB lighting for gaming and work.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🖥️ Streaming
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/microphone.jpg"
+
+alt="USB Microphone">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Gaming
+
+</span>
+
+<h3 class="product-title">
+
+USB Streaming Microphone
+
+</h3>
+
+<p class="product-description">
+
+Perfect for streaming, gaming, podcasts and online meetings with clear voice quality.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🎮 Console
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/controller.jpg"
+
+alt="Wireless Controller">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Gaming
+
+</span>
+
+<h3 class="product-title">
+
+Wireless Game Controller
+
+</h3>
+
+<p class="product-description">
+
+Comfortable ergonomic controller with responsive triggers and wireless connectivity.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+💺 Setup
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/gamingchair.jpg"
+
+alt="Gaming Chair">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Gaming
+
+</span>
+
+<h3 class="product-title">
+
+Ergonomic Gaming Chair
+
+</h3>
+
+<p class="product-description">
+
+Premium comfort with adjustable lumbar support and reclining backrest for long sessions.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
 
 </section>
-<!-- ========================= -->
-<!-- ABOUT -->
-<!-- ========================= -->
+
+<section class="section" id="home">
+
+<div class="container">
+
+<h2 class="section-title">
+
+🏠 Home Essentials
+
+</h2>
+
+<div class="section-divider"></div>
+
+<p class="section-text">
+
+Upgrade your home with practical Amazon products designed for comfort, organization and everyday living.
+
+</p>
+
+<div class="product-grid">
+  <div class="product-card">
+
+<div class="badge">
+
+🛋️ Living Room
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/blanket.jpg"
+
+alt="Cozy Throw Blanket">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Home
+
+</span>
+
+<h3 class="product-title">
+
+Cozy Throw Blanket
+
+</h3>
+
+<p class="product-description">
+
+Soft, warm and perfect for relaxing on the couch or adding comfort to your bedroom.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+💡 Smart Home
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/smartbulb.jpg"
+
+alt="Smart LED Bulb">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Home
+
+</span>
+
+<h3 class="product-title">
+
+Smart LED Bulb
+
+</h3>
+
+<p class="product-description">
+
+Control brightness and colors from your phone or voice assistant for the perfect mood.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🧺 Organization
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/storagebins.jpg"
+
+alt="Storage Bins">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Home
+
+</span>
+
+<h3 class="product-title">
+
+Storage Bin Set
+
+</h3>
+
+<p class="product-description">
+
+Keep your home organized with durable storage bins for closets, shelves and more.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🕯️ Decor
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/candle.jpg"
+
+alt="Scented Candle">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Home
+
+</span>
+
+<h3 class="product-title">
+
+Luxury Scented Candle
+
+</h3>
+
+<p class="product-description">
+
+Fill your space with relaxing fragrance while adding an elegant decorative touch.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🪴 Decor
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/plant.jpg"
+
+alt="Artificial Plant">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Home
+
+</span>
+
+<h3 class="product-title">
+
+Artificial Indoor Plant
+
+</h3>
+
+<p class="product-description">
+
+Add fresh modern style to your home without the maintenance of real plants.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🛏️ Bedroom
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/pillow.jpg"
+
+alt="Memory Foam Pillow">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Home
+
+</span>
+
+<h3 class="product-title">
+
+Memory Foam Pillow
+
+</h3>
+
+<p class="product-description">
+
+Designed for comfort and support to help improve your sleep every night.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="kitchen">
+
+<div class="container">
+
+<h2 class="section-title">
+
+🍳 Kitchen Essentials
+
+</h2>
+
+<div class="section-divider"></div>
+
+<p class="section-text">
+
+Cook smarter with Amazon's most useful kitchen gadgets and cooking accessories.
+
+</p>
+
+<div class="product-grid">
+  <div class="product-card">
+
+<div class="badge">
+
+🍳 Chef's Pick
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/knife.jpg"
+
+alt="Kitchen Knife Set">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Kitchen
+
+</span>
+
+<h3 class="product-title">
+
+Kitchen Knife Set
+
+</h3>
+
+<p class="product-description">
+
+Sharp stainless steel knives designed for everyday cooking and food preparation.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+☕ Coffee Time
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/coffeemaker.jpg"
+
+alt="Coffee Maker">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Kitchen
+
+</span>
+
+<h3 class="product-title">
+
+Coffee Maker
+
+</h3>
+
+<p class="product-description">
+
+Brew delicious coffee every morning with an easy-to-use and reliable coffee machine.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🥤 Everyday
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/blender.jpg"
+
+alt="Personal Blender">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Kitchen
+
+</span>
+
+<h3 class="product-title">
+
+Personal Blender
+
+</h3>
+
+<p class="product-description">
+
+Make smoothies, protein shakes and fresh drinks in seconds with powerful blending.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🥘 Cookware
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/panset.jpg"
+
+alt="Cookware Set">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Kitchen
+
+</span>
+
+<h3 class="product-title">
+
+Non-Stick Cookware Set
+
+</h3>
+
+<p class="product-description">
+
+Durable cookware with non-stick coating for easy cooking and quick cleanup.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🥣 Storage
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/containers.jpg"
+
+alt="Food Storage Containers">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Kitchen
+
+</span>
+
+<h3 class="product-title">
+
+Food Storage Containers
+
+</h3>
+
+<p class="product-description">
+
+Keep meals fresh and organized with stackable BPA-free storage containers.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🔥 Must Have
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/toaster.jpg"
+
+alt="2 Slice Toaster">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Kitchen
+
+</span>
+
+<h3 class="product-title">
+
+2 Slice Toaster
+
+</h3>
+
+<p class="product-description">
+
+Quickly toast bread, bagels and more with adjustable browning settings.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="fitness">
+
+<div class="container">
+
+<h2 class="section-title">
+
+🏋️ Fitness Essentials
+
+</h2>
+
+<div class="section-divider"></div>
+
+<p class="section-text">
+
+Top fitness products from Amazon to help you stay active, healthy and motivated.
+
+</p>
+
+<div class="product-grid">
+  <div class="product-card">
+
+<div class="badge">
+
+💪 Home Gym
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/dumbbells.jpg"
+
+alt="Adjustable Dumbbells">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Fitness
+
+</span>
+
+<h3 class="product-title">
+
+Adjustable Dumbbells
+
+</h3>
+
+<p class="product-description">
+
+Train at home with adjustable weights that save space and fit every workout.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🧘 Wellness
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/yogamat.jpg"
+
+alt="Yoga Mat">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Fitness
+
+</span>
+
+<h3 class="product-title">
+
+Premium Yoga Mat
+
+</h3>
+
+<p class="product-description">
+
+Comfortable non-slip yoga mat for stretching, yoga, pilates and home workouts.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🏃 Cardio
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/jumprope.jpg"
+
+alt="Jump Rope">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Fitness
+
+</span>
+
+<h3 class="product-title">
+
+Adjustable Jump Rope
+
+</h3>
+
+<p class="product-description">
+
+Boost cardio fitness with a lightweight speed rope suitable for all experience levels.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+💧 Recovery
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/waterbottle.jpg"
+
+alt="Insulated Water Bottle">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Fitness
+
+</span>
+
+<h3 class="product-title">
+
+Insulated Water Bottle
+
+</h3>
+
+<p class="product-description">
+
+Keep drinks cold or hot for hours with a durable insulated stainless steel bottle.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🏋️ Strength
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/resistancebands.jpg"
+
+alt="Resistance Bands">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Fitness
+
+</span>
+
+<h3 class="product-title">
+
+Resistance Band Set
+
+</h3>
+
+<p class="product-description">
+
+Versatile resistance bands for strength training, stretching and rehabilitation.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+⌚ Smart Fitness
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/fitnesstracker.jpg"
+
+alt="Fitness Tracker">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Fitness
+
+</span>
+
+<h3 class="product-title">
+
+Fitness Tracker
+
+</h3>
+
+<p class="product-description">
+
+Monitor daily activity, sleep, heart rate and workout progress throughout the day.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="travel">
+
+<div class="container">
+
+<h2 class="section-title">
+
+✈️ Travel Essentials
+
+</h2>
+
+<div class="section-divider"></div>
+
+<p class="section-text">
+
+Travel smarter with Amazon products designed for comfort, convenience and organization.
+
+</p>
+
+<div class="product-grid">
+  <div class="product-card">
+
+<div class="badge">
+
+🧳 Must Have
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/luggage.jpg"
+
+alt="Carry-On Suitcase">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Travel
+
+</span>
+
+<h3 class="product-title">
+
+Carry-On Suitcase
+
+</h3>
+
+<p class="product-description">
+
+Lightweight hard-shell suitcase with smooth spinner wheels for hassle-free travel.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🔋 Travel Tech
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/traveladapter.jpg"
+
+alt="Universal Travel Adapter">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Travel
+
+</span>
+
+<h3 class="product-title">
+
+Universal Travel Adapter
+
+</h3>
+
+<p class="product-description">
+
+Charge your devices around the world with one compact universal travel adapter.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+😴 Comfort
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/neckpillow.jpg"
+
+alt="Memory Foam Neck Pillow">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Travel
+
+</span>
+
+<h3 class="product-title">
+
+Memory Foam Neck Pillow
+
+</h3>
+
+<p class="product-description">
+
+Enjoy better comfort on flights, road trips and long journeys with ergonomic support.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🎒 Adventure
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/daypack.jpg"
+
+alt="Travel Daypack">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Travel
+
+</span>
+
+<h3 class="product-title">
+
+Travel Daypack
+
+</h3>
+
+<p class="product-description">
+
+Compact backpack with multiple pockets, perfect for sightseeing and daily adventures.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🧼 Organization
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/packingcubes.jpg"
+
+alt="Packing Cubes">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Travel
+
+</span>
+
+<h3 class="product-title">
+
+Packing Cube Set
+
+</h3>
+
+<p class="product-description">
+
+Keep clothes and accessories neatly organized while maximizing luggage space.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+💧 Outdoor
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/travelbottle.jpg"
+
+alt="Insulated Travel Bottle">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Travel
+
+</span>
+
+<h3 class="product-title">
+
+Insulated Travel Bottle
+
+</h3>
+
+<p class="product-description">
+
+Stay hydrated with a durable insulated bottle that keeps drinks hot or cold for hours.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="beauty">
+
+<div class="container">
+
+<h2 class="section-title">
+
+💄 Beauty Essentials
+
+</h2>
+
+<div class="section-divider"></div>
+
+<p class="section-text">
+
+Discover popular Amazon beauty and self-care products for your daily routine.
+
+</p>
+
+<div class="product-grid">
+  <div class="product-card">
+
+<div class="badge">
+
+✨ Skincare
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/skincare.jpg"
+
+alt="Skincare Set">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Beauty
+
+</span>
+
+<h3 class="product-title">
+
+Daily Skincare Set
+
+</h3>
+
+<p class="product-description">
+
+Cleanse, hydrate and refresh your skin with a complete daily skincare routine.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+💇 Hair Care
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/hairdryer.jpg"
+
+alt="Hair Dryer">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Beauty
+
+</span>
+
+<h3 class="product-title">
+
+Professional Hair Dryer
+
+</h3>
+
+<p class="product-description">
+
+Fast drying performance with multiple heat settings for everyday styling.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🪞 Makeup
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/mirror.jpg"
+
+alt="LED Makeup Mirror">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Beauty
+
+</span>
+
+<h3 class="product-title">
+
+LED Makeup Mirror
+
+</h3>
+
+<p class="product-description">
+
+Bright adjustable lighting helps with makeup, skincare and grooming.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🪒 Grooming
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/trimmer.jpg"
+
+alt="Beard Trimmer">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Beauty
+
+</span>
+
+<h3 class="product-title">
+
+Cordless Beard Trimmer
+
+</h3>
+
+<p class="product-description">
+
+Precision trimming with multiple length settings and long battery life.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🧴 Self Care
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/massager.jpg"
+
+alt="Massage Gun">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Beauty
+
+</span>
+
+<h3 class="product-title">
+
+Massage Gun
+
+</h3>
+
+<p class="product-description">
+
+Relax sore muscles with adjustable massage speeds and interchangeable heads.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🌿 Wellness
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/humidifier.jpg"
+
+alt="Essential Oil Diffuser">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Beauty
+
+</span>
+
+<h3 class="product-title">
+
+Essential Oil Diffuser
+
+</h3>
+
+<p class="product-description">
+
+Create a relaxing atmosphere with quiet mist technology and ambient lighting.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="pets">
+
+<div class="container">
+
+<h2 class="section-title">
+
+🐶 Pet Essentials
+
+</h2>
+
+<div class="section-divider"></div>
+
+<p class="section-text">
+
+Treat your pets with Amazon products designed for comfort, play and everyday care.
+
+</p>
+
+<div class="product-grid">
+  <div class="product-card">
+
+<div class="badge">
+
+🐕 Best Seller
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/dogbed.jpg"
+
+alt="Orthopedic Dog Bed">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Pets
+
+</span>
+
+<h3 class="product-title">
+
+Orthopedic Dog Bed
+
+</h3>
+
+<p class="product-description">
+
+Comfortable memory foam dog bed designed to support joints and provide restful sleep.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🐱 Cat Favorite
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/cattree.jpg"
+
+alt="Cat Tree Tower">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Pets
+
+</span>
+
+<h3 class="product-title">
+
+Cat Tree Tower
+
+</h3>
+
+<p class="product-description">
+
+Multi-level cat tower with scratching posts, platforms and a cozy resting spot.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🍖 Feeding
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/petfeeder.jpg"
+
+alt="Automatic Pet Feeder">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Pets
+
+</span>
+
+<h3 class="product-title">
+
+Automatic Pet Feeder
+
+</h3>
+
+<p class="product-description">
+
+Schedule meals and keep your pet fed on time, even when you're away from home.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🦮 Walking
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/leash.jpg"
+
+alt="Retractable Dog Leash">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Pets
+
+</span>
+
+<h3 class="product-title">
+
+Retractable Dog Leash
+
+</h3>
+
+<p class="product-description">
+
+Strong, comfortable leash with smooth retraction for safe daily walks.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🧸 Play Time
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/dogtoy.jpg"
+
+alt="Interactive Dog Toy">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Pets
+
+</span>
+
+<h3 class="product-title">
+
+Interactive Dog Toy
+
+</h3>
+
+<p class="product-description">
+
+Keep your dog entertained with a durable interactive toy designed for active play.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="badge">
+
+🛁 Grooming
+
+</div>
+
+<div class="favorite">
+
+❤
+
+</div>
+
+<div class="product-image">
+
+<img src="images/petbrush.jpg"
+
+alt="Pet Grooming Brush">
+
+</div>
+
+<div class="product-content">
+
+<span class="product-category">
+
+Pets
+
+</span>
+
+<h3 class="product-title">
+
+Pet Grooming Brush
+
+</h3>
+
+<p class="product-description">
+
+Reduce shedding and keep your pet's coat healthy with an easy-to-use grooming brush.
+
+</p>
+
+<a href="YOUR_AMAZON_AFFILIATE_LINK"
+
+target="_blank"
+
+class="amazon-btn">
+
+🛒 View on Amazon
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <section class="section" id="about">
 
-<h2 class="section-title">
-
-Why Choose Gadgetszzz?
-
-</h2>
-
-<p class="section-text">
-
-We simplify Amazon shopping by showcasing carefully selected products
-that combine quality, value and great customer reviews.
-
-</p>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="card-content">
-
-<h2>⭐ Trusted Picks</h2>
-
-<p>
-
-We feature products chosen for their strong ratings,
-reliability and overall customer satisfaction.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="card-content">
-
-<h2>⚡ Save Time</h2>
-
-<p>
-
-Stop scrolling through thousands of listings.
-We organize the best products in one place.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="card-content">
-
-<h2>🛒 Amazon Shopping</h2>
-
-<p>
-
-Every purchase is completed securely on Amazon
-using your trusted Amazon account.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- ABOUT GADGETSZZZ -->
-<!-- ========================= -->
-
-<section class="section">
+<div class="container">
 
 <h2 class="section-title">
 
@@ -1168,187 +4376,26 @@ About Gadgetszzz
 
 </h2>
 
-<p class="section-text">
-
-Gadgetszzz is built for people who love discovering useful Amazon
-products without wasting hours searching.
-
-From electronics and gaming to home, fitness,
-travel and office essentials,
-our goal is to make online shopping faster and easier.
-
-</p>
-
-</section>
-
-<!-- ========================= -->
-<!-- FAQ -->
-<!-- ========================= -->
-
-<section class="section">
-
-<h2 class="section-title">
-
-Frequently Asked Questions
-
-</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<div class="card-content">
-
-<h3>
-
-Do you sell products?
-
-</h3>
-
-<p>
-
-No.
-
-Every product is sold through Amazon.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="card-content">
-
-<h3>
-
-Do I pay extra?
-
-</h3>
-
-<p>
-
-No.
-
-Using our affiliate links does not increase
-the price you pay.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="card-content">
-
-<h3>
-
-Why should I use Gadgetszzz?
-
-</h3>
-
-<p>
-
-We save you time by organizing useful
-Amazon products into one website.
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="card-content">
-
-<h3>
-
-How often are products updated?
-
-</h3>
-
-<p>
-
-New products and trending Amazon finds
-are added regularly.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- NEWSLETTER -->
-<!-- ========================= -->
-
-<section class="section">
-
-<h2 class="section-title">
-
-Stay Updated
-
-</h2>
+<div class="section-divider"></div>
 
 <p class="section-text">
 
-Get notified when we discover amazing Amazon finds.
+Gadgetszzz is an independent Amazon affiliate website dedicated to helping shoppers discover quality products across multiple categories. Every recommendation is carefully selected to make it easier to find useful products for everyday life, home, work, travel and entertainment.
 
 </p>
 
-<div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
+<p class="section-text">
 
-<input
+As an Amazon Associate, Gadgetszzz may earn from qualifying purchases made through affiliate links. This comes at no additional cost to you and helps support the website.
 
-type="email"
-
-placeholder="Enter your email"
-
-style="
-
-width:500px;
-
-max-width:95%;
-
-padding:18px;
-
-border-radius:50px;
-
-border:none;
-
-background:#111122;
-
-color:white;
-
-font-size:17px;
-
-outline:none;
-
-">
-
-<button class="btn primary">
-
-Subscribe
-
-</button>
+</p>
 
 </div>
 
 </section>
-
-<!-- ========================= -->
-<!-- CONTACT -->
-<!-- ========================= -->
-
 <section class="section" id="contact">
+
+<div class="container">
 
 <h2 class="section-title">
 
@@ -1356,228 +4403,179 @@ Contact Us
 
 </h2>
 
+<div class="section-divider"></div>
+
 <p class="section-text">
 
-Questions, suggestions or partnership inquiries?
+Have a question, business inquiry or product suggestion? We'd love to hear from you.
 
 </p>
 
-<div class="grid">
+<div style="max-width:700px;margin:auto;background:var(--card);padding:40px;border-radius:var(--radius);border:1px solid var(--border);">
 
-<div class="card">
-
-<div class="card-content">
-
-<h3>Email</h3>
-
-<p>
-
-contact@gadgetszzz.com
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="card-content">
-
-<h3>Business Hours</h3>
-
-<p>
-
-Monday - Friday
-
-9:00 AM - 6:00 PM
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="card-content">
-
-<h3>Response Time</h3>
-
-<p>
-
-Usually within 24 hours.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<br><br>
-
-<div style="max-width:800px;margin:auto;display:flex;flex-direction:column;gap:20px;">
+<form>
 
 <input
-
 type="text"
-
 placeholder="Your Name"
-
-style="padding:18px;background:#111122;color:white;border:none;border-radius:12px;">
+style="width:100%;padding:18px;border-radius:12px;border:1px solid var(--border);background:var(--bg2);color:white;margin-bottom:20px;">
 
 <input
-
 type="email"
-
-placeholder="Email Address"
-
-style="padding:18px;background:#111122;color:white;border:none;border-radius:12px;">
+placeholder="Your Email"
+style="width:100%;padding:18px;border-radius:12px;border:1px solid var(--border);background:var(--bg2);color:white;margin-bottom:20px;">
 
 <textarea
-
-rows="7"
-
+rows="6"
 placeholder="Your Message"
+style="width:100%;padding:18px;border-radius:12px;border:1px solid var(--border);background:var(--bg2);color:white;margin-bottom:20px;resize:vertical;"></textarea>
 
-style="padding:18px;background:#111122;color:white;border:none;border-radius:12px;resize:none;">
-
-</textarea>
-
-<button class="btn primary">
+<button
+class="amazon-btn"
+type="submit">
 
 Send Message
 
 </button>
 
+</form>
+
+</div>
+
 </div>
 
 </section>
-<!-- ========================= -->
-<!-- PRIVACY POLICY -->
-<!-- ========================= -->
+
+<section class="section" id="faq">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Frequently Asked Questions
+
+</h2>
+
+<div class="section-divider"></div>
+
+<div style="max-width:900px;margin:auto;display:grid;gap:20px;">
+
+<div class="product-card">
+
+<div class="product-content">
+
+<h3>Do you sell products directly?</h3>
+
+<p class="product-description">
+
+No. Gadgetszzz is an Amazon affiliate website. Every purchase is completed securely through Amazon.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="product-content">
+
+<h3>Do I pay extra using your links?</h3>
+
+<p class="product-description">
+
+No. Amazon prices remain exactly the same whether you use our affiliate links or not.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<div class="product-content">
+
+<h3>How do you choose products?</h3>
+
+<p class="product-description">
+
+We feature products based on popularity, quality, ratings, value and usefulness across multiple categories.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <section class="section" id="privacy">
 
+<div class="container">
+
 <h2 class="section-title">
+
 Privacy Policy
+
 </h2>
+
+<div class="section-divider"></div>
 
 <p class="section-text">
 
-Your privacy matters to us.
+We respect your privacy. Gadgetszzz does not sell your personal information. If you choose to contact us, the information you provide will only be used to respond to your inquiry.
 
 </p>
 
-<div class="card">
+<p class="section-text">
 
-<div class="card-content">
-
-<p>
-
-Gadgetszzz does not directly sell products.
-
-When you click an Amazon product link, you are redirected to Amazon to complete your purchase.
-
-We may use cookies and analytics to improve the website experience.
-
-We do not knowingly collect sensitive personal information.
-
-By using this website you agree to this privacy policy.
+Amazon and third-party partners may use cookies to improve your shopping experience and measure affiliate performance.
 
 </p>
-
-</div>
 
 </div>
 
 </section>
-
-<!-- ========================= -->
-<!-- TERMS -->
-<!-- ========================= -->
 
 <section class="section" id="terms">
 
+<div class="container">
+
 <h2 class="section-title">
 
-Terms & Conditions
+Affiliate Disclosure
 
 </h2>
 
-<div class="card">
+<div class="section-divider"></div>
 
-<div class="card-content">
+<p class="section-text">
 
-<p>
-
-All information provided on Gadgetszzz is for informational purposes only.
-
-Product prices, availability and details may change without notice.
-
-Amazon trademarks belong to Amazon.com, Inc.
-
-By using this website you agree to these terms.
+Gadgetszzz participates in the Amazon Associates Program. We may earn a commission from qualifying purchases made through our affiliate links at no additional cost to you.
 
 </p>
-
-</div>
 
 </div>
 
 </section>
+<footer style="background:#050913;border-top:1px solid var(--border);padding:80px 0 30px;">
 
-<!-- ========================= -->
-<!-- AMAZON DISCLOSURE -->
-<!-- ========================= -->
+<div class="container">
 
-<section class="section">
-
-<h2 class="section-title">
-
-Amazon Affiliate Disclosure
-
-</h2>
-
-<div class="card">
-
-<div class="card-content">
-
-<p>
-
-As an Amazon Associate, Gadgetszzz earns from qualifying purchases.
-
-Using our affiliate links helps support this website at no additional cost to you.
-
-Thank you for supporting Gadgetszzz.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- FOOTER -->
-<!-- ========================= -->
-
-<footer style="background:#080814;padding:70px 8%;margin-top:80px;">
-
-<div class="grid">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;margin-bottom:50px;">
 
 <div>
 
-<h3 style="margin-bottom:20px;">GADGETSZZZ</h3>
+<h2 style="margin-bottom:18px;">Gadgets<span style="color:var(--orange);">zzz</span></h2>
 
-<p style="color:#cfcfcf;">
+<p style="color:var(--text);">
 
-Discover Amazon's Best Products.
-
-Shop Smarter.
+Discover Amazon's best products across electronics, home, gaming, fitness, travel, beauty, pets and much more.
 
 </p>
 
@@ -1585,199 +4583,123 @@ Shop Smarter.
 
 <div>
 
-<h3>Company</h3>
+<h3 style="margin-bottom:18px;">Quick Links</h3>
 
-<br>
+<p><a href="#">Home</a></p>
 
-<p><a href="#about" style="color:#cfcfcf;text-decoration:none;">About</a></p>
+<p><a href="#featured">Featured</a></p>
 
-<p><a href="#contact" style="color:#cfcfcf;text-decoration:none;">Contact</a></p>
+<p><a href="#about">About</a></p>
 
-<p><a href="#privacy" style="color:#cfcfcf;text-decoration:none;">Privacy</a></p>
-
-<p><a href="#terms" style="color:#cfcfcf;text-decoration:none;">Terms</a></p>
+<p><a href="#contact">Contact</a></p>
 
 </div>
 
 <div>
 
-<h3>Categories</h3>
+<h3 style="margin-bottom:18px;">Categories</h3>
 
-<br>
+<p><a href="#electronics">Electronics</a></p>
 
-<p>Electronics</p>
+<p><a href="#gaming">Gaming</a></p>
 
-<p>Gaming</p>
+<p><a href="#home">Home</a></p>
 
-<p>Home</p>
+<p><a href="#kitchen">Kitchen</a></p>
 
-<p>Kitchen</p>
-
-<p>Travel</p>
+<p><a href="#fitness">Fitness</a></p>
 
 </div>
 
 <div>
 
-<h3>Follow</h3>
+<h3 style="margin-bottom:18px;">Legal</h3>
 
-<br>
+<p><a href="#privacy">Privacy Policy</a></p>
 
-<p>X</p>
+<p><a href="#terms">Affiliate Disclosure</a></p>
 
-<p>Instagram</p>
+<p>Amazon Associate</p>
 
-<p>YouTube</p>
-
-</div>
+<p>All Rights Reserved</p>
 
 </div>
 
-<hr style="margin:50px 0;border-color:#222;">
+</div>
 
-<p style="text-align:center;color:#888;">
+<hr style="border:0;height:1px;background:var(--border);margin-bottom:25px;">
+
+<p style="text-align:center;color:var(--text);">
 
 © 2026 Gadgetszzz. All Rights Reserved.
 
 </p>
 
+</div>
+
 </footer>
-
-<!-- ========================= -->
-<!-- BACK TO TOP BUTTON -->
-<!-- ========================= -->
-
-<button id="topBtn">
-
-↑
-
-</button>
-
-<style>
-
-#topBtn{
-
-position:fixed;
-
-bottom:30px;
-
-right:30px;
-
-width:55px;
-
-height:55px;
-
-border:none;
-
-border-radius:50%;
-
-background:#ff9900;
-
-color:black;
-
-font-size:22px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-display:none;
-
-z-index:999;
-
-box-shadow:0 0 20px rgba(255,153,0,.4);
-
-transition:.3s;
-
-}
-
-#topBtn:hover{
-
-transform:translateY(-6px);
-
-}
-
-</style>
 
 <script>
 
-/* Back To Top */
+window.addEventListener("load",()=>{
 
-const topBtn=document.getElementById("topBtn");
+document.getElementById("loader").style.opacity="0";
+
+setTimeout(()=>{
+
+document.getElementById("loader").style.display="none";
+
+},500);
+
+});
 
 window.addEventListener("scroll",()=>{
 
-if(window.scrollY>500){
+const winScroll=document.body.scrollTop||document.documentElement.scrollTop;
 
-topBtn.style.display="block";
+const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
 
-}else{
+const scrolled=(winScroll/height)*100;
 
-topBtn.style.display="none";
-
-}
+document.getElementById("progress").style.width=scrolled+"%";
 
 });
 
-topBtn.onclick=()=>{
+document.querySelectorAll(".favorite").forEach(btn=>{
 
-window.scrollTo({
+btn.addEventListener("click",()=>{
 
-top:0,
-
-behavior:"smooth"
-
-});
-
-};
-
-/* Search */
-
-const search=document.getElementById("searchInput");
-
-const cards=document.querySelectorAll(".card");
-
-search.addEventListener("keyup",function(){
-
-const value=this.value.toLowerCase();
-
-cards.forEach(card=>{
-
-const text=card.innerText.toLowerCase();
-
-card.style.display=text.includes(value)?"block":"none";
+btn.innerHTML=btn.innerHTML=="❤"?"❤️":"❤";
 
 });
 
 });
 
-/* Fade Animation */
+document.getElementById("searchInput").addEventListener("keyup",function(){
 
-const observer=new IntersectionObserver(entries=>{
+let value=this.value.toLowerCase();
 
-entries.forEach(entry=>{
+document.querySelectorAll(".product-card").forEach(card=>{
 
-if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-
-entry.target.style.transform="translateY(0px)";
-
-}
+card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
 
 });
 
 });
 
-document.querySelectorAll(".card").forEach(card=>{
+document.querySelectorAll(".amazon-btn").forEach(btn=>{
 
-card.style.opacity="0";
+btn.addEventListener("click",()=>{
 
-card.style.transform="translateY(40px)";
+btn.innerHTML="Opening Amazon...";
 
-card.style.transition=".7s";
+setTimeout(()=>{
 
-observer.observe(card);
+btn.innerHTML="🛒 View on Amazon";
+
+},1500);
+
+});
 
 });
 
