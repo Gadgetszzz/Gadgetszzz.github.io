@@ -1,71 +1,1788 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gadgetszzz - The ultimate global marketplace for premium lifestyle, home, tech, and fashion essentials. Shop our exclusive collection today.">
-    <meta name="keywords" content="Gadgetszzz, lifestyle store, premium essentials, home goods, tech gadgets, fashion, online shopping, global marketplace, official store">
-    <title>Gadgetszzz | Official Global Store</title>
-    <style>
-        :root { --dark-blue: #050510; --bg-card: #0a0a1f; --accent-gold: #FFD814; --text-main: #e0e0e0; --border-color: #1a1a3a; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: var(--dark-blue); color: var(--text-main); font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
-        header { background: #000; padding: 30px 5%; border-bottom: 2px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 2.5rem; font-weight: 800; letter-spacing: 5px; color: #fff; text-transform: uppercase; }
-        nav a { color: var(--text-main); margin-left: 30px; text-decoration: none; font-weight: 600; }
-        .hero { padding: 120px 5%; text-align: center; background: linear-gradient(180deg, #0a0a1f 0%, #050510 100%); }
-        .slogan { font-size: 4rem; margin-bottom: 20px; }
-        .catalog { padding: 60px 5%; max-width: 1500px; margin: auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: var(--bg-card); padding: 40px; border-radius: 15px; border: 1px solid var(--border-color); text-align: center; transition: 0.3s; }
-        .card:hover { border-color: var(--accent-gold); transform: translateY(-10px); }
-        .buy-btn { display: inline-block; background: var(--accent-gold); color: #000; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 25px; }
-        footer { padding: 100px 5%; background: #000; text-align: center; border-top: 4px solid var(--accent-gold); }
-        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: left; margin-bottom: 50px; }
-        @media (max-width: 1200px) { .grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
-    </style>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gadgetszzz | Discover Amazon's Best Products</title>
+
+<meta name="description" content="Discover the best Amazon products in Electronics, Home, Kitchen, Gaming, Travel, Fitness and more. Carefully curated Amazon finds from Gadgetszzz.">
+
+<meta name="keywords" content="Amazon Finds, Amazon Products, Gadgetszzz, Tech, Gaming, Kitchen, Electronics, Home, Office, Travel">
+
+<meta name="author" content="Gadgetszzz">
+
+<meta name="robots" content="index, follow">
+
+<meta name="theme-color" content="#050510">
+
+<meta property="og:title" content="Gadgetszzz">
+
+<meta property="og:description" content="Discover Amazon's Best Products">
+
+<meta property="og:type" content="website">
+
+<meta property="og:image" content="logo.png">
+
+<meta property="og:url" content="https://YOURUSERNAME.github.io/Gadgetszzz/">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="Gadgetszzz">
+
+<meta name="twitter:description" content="Curated Amazon Finds">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+--bg:#050510;
+--card:#101020;
+--gold:#FFB300;
+--orange:#FF9900;
+--text:#ffffff;
+--gray:#cfcfcf;
+--border:#202040;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+
+}
+
+/* Animated Aurora */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+height:700px;
+
+background:#ff9900;
+
+filter:blur(180px);
+
+opacity:.12;
+
+top:-250px;
+left:-250px;
+
+animation:blob1 20s infinite alternate;
+
+z-index:-5;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:600px;
+height:600px;
+
+background:#3b82f6;
+
+filter:blur(170px);
+
+opacity:.10;
+
+right:-200px;
+bottom:-200px;
+
+animation:blob2 24s infinite alternate;
+
+z-index:-5;
+
+}
+
+@keyframes blob1{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+100%{
+
+transform:translate(300px,200px);
+
+}
+
+}
+
+@keyframes blob2{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+100%{
+
+transform:translate(-250px,-180px);
+
+}
+
+}
+
+/* Scroll Bar */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--orange);
+
+border-radius:20px;
+
+}
+
+header{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+padding:22px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(5,5,16,.75);
+
+backdrop-filter:blur(20px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:34px;
+
+font-weight:800;
+
+text-decoration:none;
+
+color:white;
+
+letter-spacing:3px;
+
+}
+
+.logo span{
+
+color:var(--orange);
+
+}
+
+nav{
+
+display:flex;
+
+gap:28px;
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:500;
+
+transition:.35s;
+
+cursor:pointer;
+
+position:relative;
+
+}
+
+nav a:hover{
+
+color:var(--orange);
+
+}
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-6px;
+
+width:0;
+
+height:2px;
+
+background:var(--orange);
+
+transition:.35s;
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:170px 20px 100px;
+
+}
+
+.hero-content{
+
+max-width:950px;
+
+}
+
+.hero h1{
+
+font-size:76px;
+
+line-height:1.05;
+
+margin-bottom:25px;
+
+font-weight:800;
+
+}
+
+.hero h1 span{
+
+color:var(--orange);
+
+}
+
+.hero p{
+
+font-size:21px;
+
+color:var(--gray);
+
+margin-bottom:45px;
+
+line-height:1.8;
+
+}
+
+.buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:18px 42px;
+
+border-radius:999px;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.primary{
+
+background:var(--orange);
+
+color:black;
+
+box-shadow:0 0 40px rgba(255,153,0,.3);
+
+}
+
+.primary:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 0 60px rgba(255,153,0,.6);
+
+}
+
+.secondary{
+
+border:2px solid rgba(255,255,255,.15);
+
+color:white;
+
+}
+
+.secondary:hover{
+
+background:white;
+
+color:black;
+
+}
+
+.search{
+
+margin-top:60px;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.search input{
+
+width:700px;
+
+max-width:92%;
+
+padding:18px 28px;
+
+border-radius:50px;
+
+background:#111122;
+
+border:1px solid rgba(255,255,255,.08);
+
+outline:none;
+
+color:white;
+
+font-size:17px;
+
+}
+
+.categories{
+
+padding:40px 8% 100px;
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.category{
+
+padding:14px 24px;
+
+border-radius:50px;
+
+background:#111122;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.category:hover{
+
+background:var(--orange);
+
+color:black;
+
+transform:translateY(-5px);
+
+}
+
+.section{
+
+padding:100px 8%;
+
+}
+
+.section-title{
+
+font-size:48px;
+
+text-align:center;
+
+margin-bottom:15px;
+
+}
+
+.section-text{
+
+text-align:center;
+
+color:var(--gray);
+
+margin-bottom:60px;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:var(--card);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+overflow:hidden;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.card:hover{
+
+transform:translateY(-12px);
+
+border-color:var(--orange);
+
+box-shadow:0 25px 50px rgba(255,153,0,.15);
+
+}
+
+.card img{
+
+width:100%;
+
+height:250px;
+
+object-fit:cover;
+
+}
+
+.badge{
+
+display:inline-block;
+
+background:var(--orange);
+
+color:black;
+
+padding:7px 16px;
+
+border-radius:999px;
+
+font-size:13px;
+
+font-weight:700;
+
+margin:20px;
+
+}
+
+.card-content{
+
+padding:0 20px 25px;
+
+}
+
+.card-content h3{
+
+margin-bottom:12px;
+
+}
+
+.card-content p{
+
+color:var(--gray);
+
+margin-bottom:25px;
+
+}
+
+.amazon-btn{
+
+display:block;
+
+width:100%;
+
+padding:16px;
+
+text-align:center;
+
+background:var(--orange);
+
+color:black;
+
+font-weight:700;
+
+border-radius:12px;
+
+text-decoration:none;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.amazon-btn:hover{
+
+transform:scale(1.03);
+
+}
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
 <header>
-    <div class="logo">GADGETSZZZ</div>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Collections</a>
-        <a href="#">Lifestyle</a>
-        <a href="#">Support</a>
-    </nav>
+
+<a href="#" class="logo">
+
+GADGETS<span>ZZZ</span>
+
+</a>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#featured">Featured</a>
+
+<a href="#categories">Categories</a>
+
+<a href="#about">About</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
 </header>
 
 <section class="hero">
-    <h1 class="slogan">Quality Curated for a Modern Era.</h1>
-    <p>Your premium destination for everything essential.</p>
-</section>
 
-<div class="catalog">
-    <div class="grid">
-        <!-- Start of Product Block 1 -->
-        <div class="card"><h3>Home Comfort Set</h3><p>Redefining your living space with premium materials.</p><a href="#" class="buy-btn">Buy on Amazon</a></div>
-        <div class="card"><h3>Tech Essentials Pro</h3><p>Innovative tools for the modern professional.</p><a href="#" class="buy-btn">Buy on Amazon</a></div>
-        <div class="card"><h3>Outdoor Adventure Kit</h3><p>Durability meets style in every environment.</p><a href="#" class="buy-btn">Buy on Amazon</a></div>
-        <div class="card"><h3>Minimalist Watch</h3><p>Precision timekeeping with a sleek design.</p><a href="#" class="buy-btn">Buy on Amazon</a></div>
-        <div class="card"><h3>Ergonomic Workspace</h3><p>Boost your productivity with comfort.</p><a href="#" class="buy-btn">Buy on Amazon</a></div>
-        <div class="card"><h3>Travel Gear Elite</h3><p>Ready for any journey, anywhere.</p><a href="#" class="buy-btn">Buy on Amazon</a></div>
-        <!-- End of Product Block 1 -->
-    </div>
+<div class="hero-content">
+
+<h1>
+
+Discover <span>Amazon's Best</span><br>
+
+Products
+
+</h1>
+
+<p>
+
+Explore carefully selected Amazon products across electronics,
+gaming, home, travel, fitness, kitchen, office and more.
+
+Every recommendation is chosen to help you shop smarter.
+
+</p>
+
+<div class="buttons">
+
+<a href="#featured" class="btn primary">
+
+Browse Amazon Finds
+
+</a>
+
+<a href="#about" class="btn secondary">
+
+Why Gadgetszzz?
+
+</a>
+
 </div>
 
-<footer>
-    <div class="footer-grid">
-        <div><h3>Company</h3><p>About Us</p><p>History</p><p>Careers</p></div>
-        <div><h3>Catalog</h3><p>Lifestyle</p><p>Tech</p><p>Office</p></div>
-        <div><h3>Legal</h3><p>Privacy Policy</p><p>Terms</p><p>Cookies</p></div>
-        <div><h3>Social</h3><p>Instagram</p><p>Twitter</p><p>YouTube</p></div>
-    </div>
-    <p>&copy; 2026 Gadgetszzz. All Rights Reserved.</p>
+<div class="search">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Amazon products...">
+
+</div>
+
+</div>
+
+</section>
+
+<section class="categories" id="categories">
+
+<div class="category">💻 Electronics</div>
+
+<div class="category">🏠 Home</div>
+
+<div class="category">🍳 Kitchen</div>
+
+<div class="category">🎮 Gaming</div>
+
+<div class="category">🏋 Fitness</div>
+
+<div class="category">✈ Travel</div>
+
+<div class="category">🚗 Automotive</div>
+
+<div class="category">💄 Beauty</div>
+
+<div class="category">🐶 Pets</div>
+
+<div class="category">📚 Office</div>
+
+<div class="category">🌲 Outdoor</div>
+
+<div class="category">👕 Fashion</div>
+
+</section>
+
+<section class="section" id="featured">
+
+<h2 class="section-title">
+
+🔥 Featured Amazon Picks
+
+</h2>
+
+<p class="section-text">
+
+Hand-picked products worth checking out.
+
+</p>
+
+<div class="grid">
+
+<div class="card" data-name="Wireless Earbuds" data-category="electronics">
+<img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80" alt="Wireless Earbuds">
+<span class="badge">Amazon Choice</span>
+<div class="card-content">
+<h3>Wireless Earbuds</h3>
+<p>Crystal-clear sound, deep bass, Bluetooth 5.3 and all-day battery life.</p>
+<p>⭐⭐⭐⭐⭐ 4.8/5</p>
+<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Mechanical Keyboard" data-category="gaming">
+<img src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&w=800&q=80" alt="Mechanical Keyboard">
+<span class="badge">Best Seller</span>
+<div class="card-content">
+<h3>Mechanical Keyboard</h3>
+<p>RGB backlit mechanical switches for gaming and productivity.</p>
+<p>⭐⭐⭐⭐⭐ 4.9/5</p>
+<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Gaming Mouse" data-category="gaming">
+<img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=800&q=80" alt="Gaming Mouse">
+<span class="badge">Trending</span>
+<div class="card-content">
+<h3>Gaming Mouse</h3>
+<p>Ultra-fast optical sensor with customizable RGB lighting.</p>
+<p>⭐⭐⭐⭐⭐ 4.8/5</p>
+<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Smart Watch" data-category="fitness">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Smart Watch">
+<span class="badge">Top Rated</span>
+<div class="card-content">
+<h3>Smart Watch</h3>
+<p>Track fitness, sleep, heart rate and receive notifications.</p>
+<p>⭐⭐⭐⭐⭐ 4.7/5</p>
+<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Air Fryer" data-category="kitchen">
+<img src="https://images.unsplash.com/photo-1585515656973-5e35b31a2d5f?auto=format&fit=crop&w=800&q=80" alt="Air Fryer">
+<span class="badge">Hot Deal</span>
+<div class="card-content">
+<h3>Air Fryer</h3>
+<p>Cook delicious meals with less oil and faster cooking times.</p>
+<p>⭐⭐⭐⭐⭐ 4.8/5</p>
+<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Robot Vacuum" data-category="home">
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Robot Vacuum">
+<span class="badge">Editor's Pick</span>
+<div class="card-content">
+<h3>Robot Vacuum</h3>
+<p>Automatically cleans carpets and hard floors with smart navigation.</p>
+<p>⭐⭐⭐⭐⭐ 4.9/5</p>
+<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Coffee Maker" data-category="kitchen">
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Coffee Maker">
+<span class="badge">Popular</span>
+<div class="card-content">
+<h3>Coffee Maker</h3>
+<p>Brew fresh coffee every morning with one-touch convenience.</p>
+<p>⭐⭐⭐⭐⭐ 4.8/5</p>
+<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Standing Desk" data-category="office">
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80" alt="Standing Desk">
+<span class="badge">Office Pick</span>
+<div class="card-content">
+<h3>Standing Desk</h3>
+<p>Electric height adjustment for a healthier workspace.</p>
+<p>⭐⭐⭐⭐⭐ 4.8/5</p>
+<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Travel Backpack" data-category="travel">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Travel Backpack">
+<span class="badge">Traveler's Choice</span>
+<div class="card-content">
+<h3>Travel Backpack</h3>
+<p>Water-resistant backpack with USB charging port.</p>
+<p>⭐⭐⭐⭐⭐ 4.8/5</p>
+<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Power Bank" data-category="electronics">
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=800&q=80" alt="Power Bank">
+<span class="badge">Must Have</span>
+<div class="card-content">
+<h3>Power Bank</h3>
+<p>High-capacity portable charger with fast charging support.</p>
+<p>⭐⭐⭐⭐⭐ 4.8/5</p>
+<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Bluetooth Speaker" data-category="electronics">
+<img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80" alt="Bluetooth Speaker">
+<span class="badge">Trending</span>
+<div class="card-content">
+<h3>Bluetooth Speaker</h3>
+<p>Rich sound with waterproof design for indoor and outdoor use.</p>
+<p>⭐⭐⭐⭐⭐ 4.7/5</p>
+<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Portable SSD" data-category="electronics">
+<img src="https://images.unsplash.com/photo-1593642634443-44adaa06623a?auto=format&fit=crop&w=800&q=80" alt="Portable SSD">
+<span class="badge">Fast Storage</span>
+<div class="card-content">
+<h3>Portable SSD</h3>
+<p>Lightning-fast storage for photos, videos and games.</p>
+<p>⭐⭐⭐⭐⭐ 4.9/5</p>
+<a href="YOUR_AMAZON_LINK" target="_blank" class="amazon-btn">🛒 View on Amazon</a>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+🔥 Trending Today
+</h2>
+
+<p class="section-text">
+The hottest Amazon products shoppers are loving right now.
+</p>
+
+<div class="grid">
+
+<div class="card" data-name="LED Desk Lamp" data-category="office">
+<img src="https://picsum.photos/600/400?random=13" alt="LED Desk Lamp">
+<span class="badge">Work Setup</span>
+<div class="card-content">
+<h3>LED Desk Lamp</h3>
+<p>Eye-care lighting with adjustable brightness and USB charging.</p>
+<p>⭐⭐⭐⭐⭐ 4.8/5</p>
+<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Dash Camera" data-category="automotive">
+<img src="https://picsum.photos/600/400?random=14" alt="Dash Camera">
+<span class="badge">Driver Pick</span>
+<div class="card-content">
+<h3>Dash Camera</h3>
+<p>Record every drive in crystal-clear Full HD for added peace of mind.</p>
+<p>⭐⭐⭐⭐⭐ 4.7/5</p>
+<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Electric Toothbrush" data-category="beauty">
+<img src="https://picsum.photos/600/400?random=15" alt="Electric Toothbrush">
+<span class="badge">Healthy Living</span>
+<div class="card-content">
+<h3>Electric Toothbrush</h3>
+<p>Professional cleaning with multiple brushing modes.</p>
+<p>⭐⭐⭐⭐⭐ 4.8/5</p>
+<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Camping Lantern" data-category="outdoor">
+<img src="https://picsum.photos/600/400?random=16" alt="Camping Lantern">
+<span class="badge">Outdoor</span>
+<div class="card-content">
+<h3>Camping Lantern</h3>
+<p>Bright rechargeable lantern perfect for camping and emergencies.</p>
+<p>⭐⭐⭐⭐⭐ 4.8/5</p>
+<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Pet Water Fountain" data-category="pets">
+<img src="https://picsum.photos/600/400?random=17" alt="Pet Water Fountain">
+<span class="badge">Pet Favorite</span>
+<div class="card-content">
+<h3>Pet Water Fountain</h3>
+<p>Fresh filtered water for cats and dogs all day long.</p>
+<p>⭐⭐⭐⭐⭐ 4.8/5</p>
+<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Yoga Mat" data-category="fitness">
+<img src="https://picsum.photos/600/400?random=18" alt="Yoga Mat">
+<span class="badge">Fitness</span>
+<div class="card-content">
+<h3>Yoga Mat</h3>
+<p>Comfortable non-slip surface for yoga, stretching and workouts.</p>
+<p>⭐⭐⭐⭐⭐ 4.8/5</p>
+<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Mini Projector" data-category="electronics">
+<img src="https://picsum.photos/600/400?random=19" alt="Mini Projector">
+<span class="badge">Movie Night</span>
+<div class="card-content">
+<h3>Mini Projector</h3>
+<p>Enjoy movies and gaming on a large screen anywhere.</p>
+<p>⭐⭐⭐⭐⭐ 4.7/5</p>
+<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Espresso Machine" data-category="kitchen">
+<img src="https://picsum.photos/600/400?random=20" alt="Espresso Machine">
+<span class="badge">Coffee Lovers</span>
+<div class="card-content">
+<h3>Espresso Machine</h3>
+<p>Create café-quality espresso and cappuccino at home.</p>
+<p>⭐⭐⭐⭐⭐ 4.9/5</p>
+<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Noise Cancelling Headphones" data-category="electronics">
+<img src="https://picsum.photos/600/400?random=21" alt="Headphones">
+<span class="badge">Premium</span>
+<div class="card-content">
+<h3>Noise Cancelling Headphones</h3>
+<p>Block outside noise while enjoying rich immersive audio.</p>
+<p>⭐⭐⭐⭐⭐ 4.9/5</p>
+<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Laptop Stand" data-category="office">
+<img src="https://picsum.photos/600/400?random=22" alt="Laptop Stand">
+<span class="badge">Office</span>
+<div class="card-content">
+<h3>Laptop Stand</h3>
+<p>Improve posture and airflow while working from home.</p>
+<p>⭐⭐⭐⭐⭐ 4.8/5</p>
+<a href="YOUR_AMAZON_LINK" class="amazon-btn" target="_blank">🛒 View on Amazon</a>
+</div>
+</div>
+
+<div class="card" data-name="Top Picks Under $50" data-category="featured">
+<span class="badge">Budget Friendly</span>
+
+<div class="card-content">
+
+<h3>💰 Top Picks Under $50</h3>
+
+<p>
+Great Amazon products that offer excellent value without breaking the bank.
+Perfect for gifts, upgrades, and everyday essentials.
+</p>
+
+</div>
+
+</div>
+
+<div class="card" data-name="Editor's Choice" data-category="featured">
+<span class="badge">Editor's Choice</span>
+
+<div class="card-content">
+
+<h3>🏆 Our Favorite Finds</h3>
+
+<p>
+Each week we feature products that stand out for quality, customer reviews,
+and overall value.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+📊 Gadgetszzz by the Numbers
+</h2>
+
+<p class="section-text">
+Growing every day with carefully selected Amazon products.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-content">
+<h2>500+</h2>
+<p>Curated Amazon Products</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h2>12+</h2>
+<p>Shopping Categories</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h2>24/7</h2>
+<p>Available Online</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h2>100%</h2>
+<p>Amazon Focused</p>
+</div>
+</div>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- ABOUT -->
+<!-- ========================= -->
+
+<section class="section" id="about">
+
+<h2 class="section-title">
+
+Why Choose Gadgetszzz?
+
+</h2>
+
+<p class="section-text">
+
+We simplify Amazon shopping by showcasing carefully selected products
+that combine quality, value and great customer reviews.
+
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="card-content">
+
+<h2>⭐ Trusted Picks</h2>
+
+<p>
+
+We feature products chosen for their strong ratings,
+reliability and overall customer satisfaction.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-content">
+
+<h2>⚡ Save Time</h2>
+
+<p>
+
+Stop scrolling through thousands of listings.
+We organize the best products in one place.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-content">
+
+<h2>🛒 Amazon Shopping</h2>
+
+<p>
+
+Every purchase is completed securely on Amazon
+using your trusted Amazon account.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- ABOUT GADGETSZZZ -->
+<!-- ========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+About Gadgetszzz
+
+</h2>
+
+<p class="section-text">
+
+Gadgetszzz is built for people who love discovering useful Amazon
+products without wasting hours searching.
+
+From electronics and gaming to home, fitness,
+travel and office essentials,
+our goal is to make online shopping faster and easier.
+
+</p>
+
+</section>
+
+<!-- ========================= -->
+<!-- FAQ -->
+<!-- ========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+Frequently Asked Questions
+
+</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="card-content">
+
+<h3>
+
+Do you sell products?
+
+</h3>
+
+<p>
+
+No.
+
+Every product is sold through Amazon.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-content">
+
+<h3>
+
+Do I pay extra?
+
+</h3>
+
+<p>
+
+No.
+
+Using our affiliate links does not increase
+the price you pay.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-content">
+
+<h3>
+
+Why should I use Gadgetszzz?
+
+</h3>
+
+<p>
+
+We save you time by organizing useful
+Amazon products into one website.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-content">
+
+<h3>
+
+How often are products updated?
+
+</h3>
+
+<p>
+
+New products and trending Amazon finds
+are added regularly.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- NEWSLETTER -->
+<!-- ========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+Stay Updated
+
+</h2>
+
+<p class="section-text">
+
+Get notified when we discover amazing Amazon finds.
+
+</p>
+
+<div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;">
+
+<input
+
+type="email"
+
+placeholder="Enter your email"
+
+style="
+
+width:500px;
+
+max-width:95%;
+
+padding:18px;
+
+border-radius:50px;
+
+border:none;
+
+background:#111122;
+
+color:white;
+
+font-size:17px;
+
+outline:none;
+
+">
+
+<button class="btn primary">
+
+Subscribe
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CONTACT -->
+<!-- ========================= -->
+
+<section class="section" id="contact">
+
+<h2 class="section-title">
+
+Contact Us
+
+</h2>
+
+<p class="section-text">
+
+Questions, suggestions or partnership inquiries?
+
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="card-content">
+
+<h3>Email</h3>
+
+<p>
+
+contact@gadgetszzz.com
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-content">
+
+<h3>Business Hours</h3>
+
+<p>
+
+Monday - Friday
+
+9:00 AM - 6:00 PM
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="card-content">
+
+<h3>Response Time</h3>
+
+<p>
+
+Usually within 24 hours.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<br><br>
+
+<div style="max-width:800px;margin:auto;display:flex;flex-direction:column;gap:20px;">
+
+<input
+
+type="text"
+
+placeholder="Your Name"
+
+style="padding:18px;background:#111122;color:white;border:none;border-radius:12px;">
+
+<input
+
+type="email"
+
+placeholder="Email Address"
+
+style="padding:18px;background:#111122;color:white;border:none;border-radius:12px;">
+
+<textarea
+
+rows="7"
+
+placeholder="Your Message"
+
+style="padding:18px;background:#111122;color:white;border:none;border-radius:12px;resize:none;">
+
+</textarea>
+
+<button class="btn primary">
+
+Send Message
+
+</button>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- PRIVACY POLICY -->
+<!-- ========================= -->
+
+<section class="section" id="privacy">
+
+<h2 class="section-title">
+Privacy Policy
+</h2>
+
+<p class="section-text">
+
+Your privacy matters to us.
+
+</p>
+
+<div class="card">
+
+<div class="card-content">
+
+<p>
+
+Gadgetszzz does not directly sell products.
+
+When you click an Amazon product link, you are redirected to Amazon to complete your purchase.
+
+We may use cookies and analytics to improve the website experience.
+
+We do not knowingly collect sensitive personal information.
+
+By using this website you agree to this privacy policy.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- TERMS -->
+<!-- ========================= -->
+
+<section class="section" id="terms">
+
+<h2 class="section-title">
+
+Terms & Conditions
+
+</h2>
+
+<div class="card">
+
+<div class="card-content">
+
+<p>
+
+All information provided on Gadgetszzz is for informational purposes only.
+
+Product prices, availability and details may change without notice.
+
+Amazon trademarks belong to Amazon.com, Inc.
+
+By using this website you agree to these terms.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- AMAZON DISCLOSURE -->
+<!-- ========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+Amazon Affiliate Disclosure
+
+</h2>
+
+<div class="card">
+
+<div class="card-content">
+
+<p>
+
+As an Amazon Associate, Gadgetszzz earns from qualifying purchases.
+
+Using our affiliate links helps support this website at no additional cost to you.
+
+Thank you for supporting Gadgetszzz.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer style="background:#080814;padding:70px 8%;margin-top:80px;">
+
+<div class="grid">
+
+<div>
+
+<h3 style="margin-bottom:20px;">GADGETSZZZ</h3>
+
+<p style="color:#cfcfcf;">
+
+Discover Amazon's Best Products.
+
+Shop Smarter.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>Company</h3>
+
+<br>
+
+<p><a href="#about" style="color:#cfcfcf;text-decoration:none;">About</a></p>
+
+<p><a href="#contact" style="color:#cfcfcf;text-decoration:none;">Contact</a></p>
+
+<p><a href="#privacy" style="color:#cfcfcf;text-decoration:none;">Privacy</a></p>
+
+<p><a href="#terms" style="color:#cfcfcf;text-decoration:none;">Terms</a></p>
+
+</div>
+
+<div>
+
+<h3>Categories</h3>
+
+<br>
+
+<p>Electronics</p>
+
+<p>Gaming</p>
+
+<p>Home</p>
+
+<p>Kitchen</p>
+
+<p>Travel</p>
+
+</div>
+
+<div>
+
+<h3>Follow</h3>
+
+<br>
+
+<p>X</p>
+
+<p>Instagram</p>
+
+<p>YouTube</p>
+
+</div>
+
+</div>
+
+<hr style="margin:50px 0;border-color:#222;">
+
+<p style="text-align:center;color:#888;">
+
+© 2026 Gadgetszzz. All Rights Reserved.
+
+</p>
+
 </footer>
 
+<!-- ========================= -->
+<!-- BACK TO TOP BUTTON -->
+<!-- ========================= -->
+
+<button id="topBtn">
+
+↑
+
+</button>
+
+<style>
+
+#topBtn{
+
+position:fixed;
+
+bottom:30px;
+
+right:30px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:#ff9900;
+
+color:black;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+display:none;
+
+z-index:999;
+
+box-shadow:0 0 20px rgba(255,153,0,.4);
+
+transition:.3s;
+
+}
+
+#topBtn:hover{
+
+transform:translateY(-6px);
+
+}
+
+</style>
+
+<script>
+
+/* Back To Top */
+
+const topBtn=document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>500){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+/* Search */
+
+const search=document.getElementById("searchInput");
+
+const cards=document.querySelectorAll(".card");
+
+search.addEventListener("keyup",function(){
+
+const value=this.value.toLowerCase();
+
+cards.forEach(card=>{
+
+const text=card.innerText.toLowerCase();
+
+card.style.display=text.includes(value)?"block":"none";
+
+});
+
+});
+
+/* Fade Animation */
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0px)";
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".card").forEach(card=>{
+
+card.style.opacity="0";
+
+card.style.transform="translateY(40px)";
+
+card.style.transition=".7s";
+
+observer.observe(card);
+
+});
+
+</script>
+
 </body>
+
 </html>
