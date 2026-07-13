@@ -8,7 +8,7 @@
         .amazon-btn {
             background-color: #FFD814;
             border: 1px solid #FCD200;
-            padding: 10px 20px;
+            padding: 15px 30px;
             text-decoration: none;
             color: black;
             font-weight: bold;
@@ -16,24 +16,26 @@
             cursor: pointer;
             display: inline-block;
             margin-top: 20px;
+            position: relative;
+            overflow: hidden; /* Keeps the animation inside the button */
         }
         .amazon-btn:hover { background-color: #F7CA00; }
 
-        /* Cart Animation */
+        /* Mirrored Cart Animation */
         .cart-container {
-            font-size: 50px;
-            margin-top: 50px;
             display: inline-block;
+            transform: scaleX(-1); /* Flips the cart to face left */
+            margin-right: 10px;
             animation: moveCart 3s linear infinite;
         }
-        .cart-container:hover {
+
+        .amazon-btn:hover .cart-container {
             animation-play-state: paused;
-            cursor: pointer;
         }
 
         @keyframes moveCart {
-            0% { transform: translateX(-100px); }
-            100% { transform: translateX(100px); }
+            0% { transform: scaleX(-1) translateX(20px); }
+            100% { transform: scaleX(-1) translateX(-20px); }
         }
     </style>
 </head>
@@ -42,12 +44,10 @@
     <h1>Welcome to Gadgetszzz</h1>
     <p>Check out our latest featured product!</p>
 
-    <!-- Shopping Cart Animation -->
-    <div class="cart-container">🛒</div>
-
-    <br>
-    <!-- Buy Button -->
-    <a href="YOUR_AMAZON_AFFILIATE_LINK_HERE" class="amazon-btn">Buy on Amazon</a>
+    <!-- Buy Button with integrated Cart -->
+    <a href="YOUR_AMAZON_AFFILIATE_LINK_HERE" class="amazon-btn">
+        <span class="cart-container">🛒</span> Buy on Amazon
+    </a>
 
 </body>
 </html>
