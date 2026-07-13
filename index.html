@@ -3,50 +3,61 @@
 <head>
     <style>
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-family: 'Segoe UI', sans-serif; 
             text-align: center; 
-            padding: 50px; 
-            background: linear-gradient(135deg, #000000 0%, #0a0a2e 100%); 
-            color: white;
-            min-height: 100vh;
             margin: 0;
+            padding: 0;
+            height: 100vh;
+            /* Cool black and blue gradient */
+            background: radial-gradient(circle at center, #001f3f 0%, #000000 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         
-        h1 { color: #ffffff; }
+        h1 { 
+            font-size: 3rem; 
+            text-shadow: 0 0 10px #007bff; 
+            margin-bottom: 10px;
+        }
+
+        p { color: #cccccc; margin-bottom: 30px; }
         
-        /* Button Style */
+        /* Professional Button */
         .amazon-btn {
             background-color: #FFD814;
             border: none;
-            padding: 15px 30px;
+            padding: 18px 40px;
             text-decoration: none;
             color: black;
             font-weight: bold;
-            border-radius: 8px;
+            font-size: 1.2rem;
+            border-radius: 50px; /* Rounded pill shape */
             cursor: pointer;
-            display: inline-block;
-            margin-top: 20px;
-            transition: background-color 0.2s;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 216, 20, 0.3);
         }
         
         .amazon-btn:hover { 
             background-color: #F7CA00; 
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 216, 20, 0.5);
         }
 
-        /* Cart Icon - Completely still */
         .cart-icon {
             display: inline-block;
-            transform: scaleX(-1); /* Keep cart flipped */
-            margin-right: 10px;
+            transform: scaleX(-1);
+            margin-right: 12px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to Gadgetszzz</h1>
-    <p>Discover our premium selection of tech.</p>
+    <h1>Gadgetszzz</h1>
+    <p>Premium Tech Selection</p>
 
-    <!-- Buy Button with static Cart -->
     <a href="YOUR_AMAZON_AFFILIATE_LINK_HERE" class="amazon-btn">
         <span class="cart-icon">🛒</span> Buy on Amazon
     </a>
